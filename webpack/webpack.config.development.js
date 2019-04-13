@@ -15,11 +15,7 @@ module.exports = merge(common, {
     rules: [
       {
         test: /\.(s?css)$/, // Sass or CSS
-        use: [
-          'style-loader',
-          'css-loader',
-          // 'sass-loader'
-        ],
+        use: ['style-loader', 'css-loader', 'sass-loader'],
         // Style loader for HMR in development
       },
     ],

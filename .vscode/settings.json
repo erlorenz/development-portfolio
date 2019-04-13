@@ -1,14 +1,15 @@
 {
-    "typescript.validate.enable": false,
-    "eslint.validate" : [
+    "editor.formatOnSave": true,
+    "[javascript]": {
+        "editor.formatOnSave": false,
+    },
+    "eslint.autoFixOnSave": true,
+    "eslint.validate": [
+        "javascript",
         {
-            "language" : "javascript",
-            "autoFix": true
-        },
-        {
-            "language" : "typescript",
-            "autoFix": true
+            "language": "vue",
+            "autoFix": true,
         }
     ],
-    "eslint.autoFixOnSave": true,
+    "files.eol": "\n",
 }
