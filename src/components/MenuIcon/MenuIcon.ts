@@ -45,3 +45,5 @@ class MenuIcon extends LitElement {
     `;
   }
 }
+
+export default MenuIcon;

@@ -67,3 +67,5 @@ class DetailsLayout extends LitElement {
     `;
   }
 }
+
+export default DetailsLayout;
