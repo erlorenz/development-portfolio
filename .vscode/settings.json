@@ -1,29 +1,14 @@
 {
-    "editor.formatOnSave": true,
-    "[javascript]": {
-        "editor.formatOnSave": false,
-    },
-    "[javascriptreact]": {
-        "editor.formatOnSave": false,
-    },
-    "[typescript]": {
-        "editor.formatOnSave": false,
-    },
-    "[typescriptreact]": {
-        "editor.formatOnSave": false,
-    },
-    "eslint.autoFixOnSave": true,
-    "eslint.validate": [
-        "javascript",
-        "javascriptreact",
+    "typescript.validate.enable": false,
+    "eslint.validate" : [
         {
-            "language": "typescript",
+            "language" : "javascript",
             "autoFix": true
         },
         {
-            "language": "typescriptreact",
+            "language" : "typescript",
             "autoFix": true
         }
     ],
-    "files.eol": "\n",
+    "eslint.autoFixOnSave": true,
 }

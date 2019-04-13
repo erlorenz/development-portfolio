@@ -1,0 +1,8 @@
+/* Set variables for theme change */
+
+:root {
+    --bg: white;
+    --text-color: #555;
+    --primary-theme-color: #1D1B1B;
+    --secondary-theme-color: #EC4D37;
+  }
