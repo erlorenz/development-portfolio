@@ -1,6 +1,6 @@
-import { LitElement, customElement, html, property } from 'lit-element';
+import { LitElement, customElement, html, property, css } from 'lit-element';
 import '../MenuIcon/MenuIcon.ts';
-import style from './style';
+import '../StaggeredListItem/StaggeredListItem.ts';
 
 @customElement('side-menu')
 class SideMenu extends LitElement {
@@ -8,7 +8,47 @@ class SideMenu extends LitElement {
   private _isOpen = false;
 
   static get styles() {
-    return style;
+    return css`
+      :host {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: -220px;
+        height: 100%;
+        width: 300px;
+        background-color: var(--primary-theme-color);
+        z-index: 1;
+        padding-top: 80px;
+      }
+
+      button {
+        cursor: pointer;
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 80px;
+        width: 80px;
+        background-color: transparent;
+        border: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        margin-top: 2rem;
+      }
+
+      a {
+        text-decoration: none;
+        color: var(--secondary-theme-color);
+      }
+    `;
   }
 
   render() {
@@ -20,36 +60,21 @@ class SideMenu extends LitElement {
         <menu-icon slide="${this._isOpen ? 'open' : 'closed'}"></menu-icon>
       </button>
       <ul>
-        <li
-          class="${this._isOpen ? 'list-item--slide' : ''}"
-          style="transition-delay:0ms"
-        >
+        <staggered-list-item ?slide="${this._isOpen}">
           <a href="#">Press Express - Public App (React)</a>
-        </li>
-        <li
-          class="${this._isOpen ? 'list-item--slide' : ''}"
-          style="transition-delay:50ms"
-        >
+        </staggered-list-item>
+        <staggered-list-item ?slide="${this._isOpen}" .delay=${'50'}>
           <a href="#">Press Express - Public App (Vue)</a>
-        </li>
-        <li
-          class="${this._isOpen ? 'list-item--slide' : ''}"
-          style="transition-delay:100ms"
-        >
+        </staggered-list-item>
+        <staggered-list-item ?slide="${this._isOpen}" .delay=${'100'}>
           <a href="#">Press Express - Back End</a>
-        </li>
-        <li
-          class="${this._isOpen ? 'list-item--slide' : ''}"
-          style="transition-delay:150ms"
-        >
+        </staggered-list-item>
+        <staggered-list-item ?slide="${this._isOpen}" .delay=${'150'}>
           <a href="#">Webpack Typescript Boilerplate</a>
-        </li>
-        <li
-          class="${this._isOpen ? 'list-item--slide' : ''}"
-          style="transition-delay:200ms"
-        >
+        </staggered-list-item>
+        <staggered-list-item ?slide="${this._isOpen}" .delay=${'200'}>
           <a href="#">Personal Portfolio</a>
-        </li>
+        </staggered-list-item>
       </ul>
     `;
   }

@@ -8,11 +8,11 @@ class MenuIcon extends LitElement {
   static get styles() {
     return css`
       .stick {
-        height: 2px;
-        width: 35px;
+        height: 3px;
+        width: 30px;
         background-color: white;
-        margin-bottom: 5px;
-        transition: transform 0.2s ease;
+        margin-bottom: 8px;
+        transition: transform 0.3s ease;
       }
 
       .stick:last-child {
@@ -23,8 +23,16 @@ class MenuIcon extends LitElement {
         width: 28px;
       }
 
-      .stick4 {
-        width: 22px;
+      .stick1.open {
+        transform: translateY(11px) rotate(405deg);
+      }
+
+      .stick3.open {
+        transform: translateY(-11px) rotate(315deg);
+      }
+
+      .stick2.open {
+        opacity: 0;
       }
     `;
   }
@@ -34,7 +42,6 @@ class MenuIcon extends LitElement {
       <div class="stick stick1 ${this.slide === 'open' ? 'open' : ''}"></div>
       <div class="stick stick2 ${this.slide === 'open' ? 'open' : ''}"></div>
       <div class="stick stick3 ${this.slide === 'open' ? 'open' : ''}"></div>
-      <div class="stick stick4 ${this.slide === 'open' ? 'open' : ''}"></div>
     `;
   }
 }

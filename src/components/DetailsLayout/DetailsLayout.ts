@@ -25,7 +25,13 @@ class DetailsLayout extends LitElement {
         background-color: yellow;
         width: calc(100% - 80px);
         z-index: 2;
-        transition: transform 0.4s ease;
+      }
+
+      .sliding-canvas {
+        width: 100%;
+        min-height: 100vh;
+        position: relative;
+        transition: transform 0.3s ease;
       }
 
       .slide {
@@ -48,12 +54,16 @@ class DetailsLayout extends LitElement {
 
   render() {
     return html`
-      <side-menu
-        @toggleSideMenu="${() => (this._isOpen = !this._isOpen)}"
-      ></side-menu>
-      <main class="${this._isOpen ? 'slide' : ''}">
-        <slot></slot>
-      </main>
+      <!-- Canvas slides based on _isOpen state -->
+      <div class="sliding-canvas ${this._isOpen ? 'slide' : ''}">
+        <!-- Custom event from side menu -->
+        <side-menu
+          @toggleSideMenu="${() => (this._isOpen = !this._isOpen)}"
+        ></side-menu>
+        <main>
+          <slot></slot>
+        </main>
+      </div>
     `;
   }
 }
