@@ -14,27 +14,16 @@ class SideMenu extends LitElement {
         flex-direction: column;
         position: fixed;
         top: 0;
-        left: -220px;
+        left: -300px;
         height: 100%;
-        width: 300px;
         background-color: var(--primary-theme-color);
         z-index: 1;
         padding-top: 80px;
+        width: 300px;
       }
 
       button {
-        cursor: pointer;
-        position: absolute;
-        right: 0;
-        top: 0;
-        height: 80px;
-        width: 80px;
-        background-color: transparent;
-        border: none;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        display: none;
       }
 
       ul {
@@ -47,6 +36,31 @@ class SideMenu extends LitElement {
       a {
         text-decoration: none;
         color: var(--secondary-theme-color);
+      }
+
+      @media (min-width: 450px) {
+        :host {
+          left: -220px;
+        }
+
+        button {
+          cursor: pointer;
+          position: absolute;
+          right: 0;
+          top: 0;
+          height: 80px;
+          width: 80px;
+          background-color: transparent;
+          border: none;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+
+        button:focus {
+          outline: none;
+        }
       }
     `;
   }
