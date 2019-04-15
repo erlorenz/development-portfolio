@@ -17,7 +17,7 @@ class SideMenu extends LitElement {
         left: -300px;
         height: 100%;
         background-color: var(--primary-theme-color);
-        z-index: 1;
+        z-index: 5;
         padding-top: 80px;
         width: 300px;
       }
@@ -31,6 +31,7 @@ class SideMenu extends LitElement {
         margin: 0;
         padding: 0;
         margin-top: 2rem;
+        text-align: right;
       }
 
       a {
@@ -88,6 +89,9 @@ class SideMenu extends LitElement {
         </staggered-list-item>
         <staggered-list-item ?slide="${this._isOpen}" .delay=${'200'}>
           <a href="#">Personal Portfolio</a>
+        </staggered-list-item>
+        <staggered-list-item ?slide="${this._isOpen}" .delay=${'200'}>
+          <a href="#">Home</a>
         </staggered-list-item>
       </ul>
     `;

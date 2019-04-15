@@ -3,7 +3,7 @@ import { LitElement, html, customElement, property, css } from 'lit-element';
 @customElement('menu-icon')
 class MenuIcon extends LitElement {
   @property()
-  private slide = 'closed';
+  open = false;
 
   static get styles() {
     return css`
@@ -39,9 +39,11 @@ class MenuIcon extends LitElement {
 
   render() {
     return html`
-      <div class="stick stick1 ${this.slide === 'open' ? 'open' : ''}"></div>
-      <div class="stick stick2 ${this.slide === 'open' ? 'open' : ''}"></div>
-      <div class="stick stick3 ${this.slide === 'open' ? 'open' : ''}"></div>
+      <div class="sticks ${this.open ? 'open' : ''}">
+        <div class="stick stick1 ${this.open ? 'open' : ''}"></div>
+        <div class="stick stick2 ${this.open ? 'open' : ''}"></div>
+        <div class="stick stick3 ${this.open ? 'open' : ''}"></div>
+      </div>
     `;
   }
 }

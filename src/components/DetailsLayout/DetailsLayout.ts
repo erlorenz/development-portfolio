@@ -35,19 +35,22 @@ class DetailsLayout extends LitElement {
       }
 
       .slide {
-        transform: translateX(220px);
+        transform: translateX(300px);
       }
 
-      @keyframes slide {
-        0% {
-          transform: translateX(0);
-        }
-        90% {
-          transform: translateX(240px);
-        }
-        100% {
-          transform: translateX(220px);
-        }
+      .overlay {
+        display: none;
+      }
+
+      .overlay.show {
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        background-color: #000000a3;
+        z-index: 3;
       }
 
       @media (min-width: 450px) {
@@ -57,6 +60,10 @@ class DetailsLayout extends LitElement {
           top: 0;
           background-color: yellow;
           width: calc(100% - 80px);
+        }
+
+        .slide {
+          transform: translateX(220px);
         }
       }
     `;
@@ -70,6 +77,8 @@ class DetailsLayout extends LitElement {
       <div class="sliding-canvas ${this._isOpen ? 'slide' : ''}">
         <!-- Custom event from side menu -->
         <side-menu @toggleSideMenu="${this.toggleOpen}"></side-menu>
+        <!-- Overlay appears on menu open -->
+        <div class="overlay ${this._isOpen ? 'show' : ''}"></div>
         <main>
           <slot></slot>
         </main>

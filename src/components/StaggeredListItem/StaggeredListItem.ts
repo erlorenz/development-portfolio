@@ -17,6 +17,7 @@ class StaggeredListItem extends LitElement {
         transition: transform 0.3s ease, opacity 0.3s ease;
         transform: translateX(-100px);
         opacity: 0;
+        padding-right: 1.5rem;
       }
 
       :host([slide]) {
