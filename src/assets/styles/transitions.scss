@@ -1,0 +1,10 @@
+img.fade-image {
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity .3s ease, transform .3s ease;
+}
+
+img.fade-image.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}

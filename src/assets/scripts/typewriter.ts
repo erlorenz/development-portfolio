@@ -1,5 +1,5 @@
 function typewriter() {
-  const speed = 100;
+  const speed = 120;
   const element = document.querySelector('#hero .typed-text') as HTMLElement;
   let text = `Hi, I'm Erik.`;
 
@@ -10,4 +10,6 @@ function typewriter() {
   });
 }
 
-export default typewriter;
+addEventListener('DOMContentLoaded', () => {
+  typewriter();
+});

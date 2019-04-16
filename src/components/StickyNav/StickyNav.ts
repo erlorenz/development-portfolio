@@ -18,6 +18,7 @@ class StickyNav extends LitElement {
       }
 
       ul {
+        box-sizing: inherit;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -27,6 +28,8 @@ class StickyNav extends LitElement {
         padding: 0%;
         transform: translateY(-15px);
         transition: transform 0.5s ease;
+        height: 60px;
+        font-size: 20px;
       }
 
       span {
@@ -38,6 +41,11 @@ class StickyNav extends LitElement {
       a {
         color: var(--secondary-theme-color);
         text-decoration: none;
+        position: relative;
+      }
+
+      a:hover {
+        color: white;
       }
 
       :host(.atTop) ul {
@@ -56,6 +64,7 @@ class StickyNav extends LitElement {
 
         ul {
           font-size: 40px;
+          height: 100%;
         }
       }
     `;

@@ -1,10 +1,19 @@
+// Styles
 import './assets/styles/index.scss';
+
+// Web Components
 import './components/DetailsLayout/DetailsLayout';
 import './components/StickyNav/StickyNav';
-import './assets/scripts/isAtTop';
+import './components/ThemeChanger/ThemeChanger';
 
-import typewriter from './assets/scripts/typewriter';
+// Scripts
+import isAtTop from './assets/scripts/isAtTop';
+import './assets/scripts/typewriter';
+import lazyImages from './assets/scripts/lazyImages';
+import fadeImages from './assets/scripts/fadeImages';
 
 addEventListener('DOMContentLoaded', () => {
-  typewriter();
+  isAtTop();
+  lazyImages();
+  fadeImages();
 });
