@@ -1,10 +1,58 @@
 #tech {
     min-height: 200px;
+    width: 100%;
+    padding: 40px 5%;
 
-    padding: 200px 0;
     .tech__row {
+        width: 100%;
         display: flex;
-        justify-content: space-evenly;
-
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
     }
+
+    img {
+    height: auto;
+    width: auto;
+    max-height: 200px;
+    max-width: 350px;
+    padding: 50px;
+    }
+
+
+    // .figma {
+    //     width: 50px;
+    // }
+
+    // .firebase {
+    //     width: 200px;
+    // }
+
+    // .react {
+    //     width: 120px;
+    // }
+
+    // .graphql {
+    //     width: 200px;
+    // }
+
+    // .gcloud {
+    //     width: 250px;
+    // }
+
+    // .node {
+    //     width: 150px;
+    // }
+
+    // .sass {
+    //     width: 100px;
+    // }
+
+    // .mongodb {
+    //     width: 200px;
+    // }
+
+    // .postgresql {
+    //     width: 250px;
+    // }
 }

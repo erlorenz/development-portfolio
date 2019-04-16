@@ -15,6 +15,7 @@ class StickyNav extends LitElement {
         color: var(--secondary-theme-color);
         top: 0;
         align-items: center;
+        z-index: 10;
       }
 
       ul {
@@ -74,7 +75,7 @@ class StickyNav extends LitElement {
     return html`
       <ul>
         <li class="link">
-          <a href="#">tech</a>
+          <a href="#tech">tech</a>
         </li>
         <span>|</span>
         <li class="link">

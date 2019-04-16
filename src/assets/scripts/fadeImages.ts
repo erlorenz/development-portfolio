@@ -1,9 +1,10 @@
 function fadeImages() {
   const images = document.querySelectorAll('.fade-image');
+  console.log(images);
 
   // Load image 100px before coming into view
   const config = {
-    threshold: 0.8,
+    threshold: 1,
   };
 
   const observer = new IntersectionObserver((entries, observer) => {
