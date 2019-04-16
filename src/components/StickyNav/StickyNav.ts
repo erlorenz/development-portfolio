@@ -1,4 +1,4 @@
-import { LitElement, html, customElement, css } from 'lit-element';
+import { LitElement, html, customElement, css, property } from 'lit-element';
 
 @customElement('sticky-nav')
 class StickyNav extends LitElement {
@@ -9,31 +9,44 @@ class StickyNav extends LitElement {
         display: flex;
         justify-content: center;
         position: sticky;
-        width: 100vw;
+        width: 100%;
         height: 60px;
         background-color: var(--primary-theme-color);
         color: var(--secondary-theme-color);
         top: 0;
+        align-items: center;
       }
 
       ul {
         display: flex;
         flex-direction: row;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
         list-style: none;
         margin: 0;
         padding: 0%;
+        transform: translateY(-15px);
+        transition: transform 0.5s ease;
       }
 
       span {
         color: var(--secondary-theme-color);
         margin: 0 0.5rem;
+        transition: opacity 0.5s ease, transform 0.5s ease;
       }
 
       a {
         color: var(--secondary-theme-color);
         text-decoration: none;
+      }
+
+      :host(.atTop) ul {
+        transform: scale(0.8) translateY(0);
+      }
+
+      :host(.atTop) span {
+        opacity: 0;
+        transform: translateY(-15px);
       }
 
       @media (min-width: 450px) {
@@ -51,19 +64,19 @@ class StickyNav extends LitElement {
   render() {
     return html`
       <ul>
-        <li>
+        <li class="link">
           <a href="#">tech</a>
         </li>
         <span>|</span>
-        <li>
+        <li class="link">
           <a href="#"> work</a>
         </li>
         <span>|</span>
-        <li>
+        <li class="link">
           <a href="#"> about</a>
         </li>
         <span>|</span>
-        <li>
+        <li class="link">
           <a href="#"> contact</a>
         </li>
       </ul>
