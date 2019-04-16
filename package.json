@@ -23,7 +23,8 @@
   "homepage": "https://github.com/erlorenz/webpack-ts-eslint-starter#readme",
   "dependencies": {
     "lit-element": "^2.1.0",
-    "sanitize.css": "^8.0.0"
+    "sanitize.css": "^8.0.0",
+    "typed.js": "^2.0.10"
   },
   "devDependencies": {
     "@types/jest": "^24.0.11",

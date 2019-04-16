@@ -1,4 +1,5 @@
-import './styles/index.css';
-import './components/DetailsLayout/DetailsLayout.ts';
+import './assets/styles/index.scss';
+import './components/DetailsLayout/DetailsLayout';
+import './components/StickyNav/StickyNav';
 
-console.log(process.env.NODE_ENV);
+import './assets/scripts/typewriter';
