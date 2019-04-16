@@ -11,16 +11,56 @@
     @media (min-width: 450px) {
         height: calc(100vh - 97px);
     }
-}
 
-#hero h1 {
-    max-width: 80%;
-    font-size: 4.5rem;
-    margin-top: -10vh;
+
+    .typewriter {
+        text-align: left;
+        display: flex;
+        align-items: flex-end;
+        width: 310px;
+        justify-content: flex-start;
+
+        @media (min-width: 450px) {
+            width: 500px;
+        }
+    }
     
-    @media (min-width: 450px) {
-        font-size: 10rem;
-        max-width: 700px;
+    .typed-text {
+        margin: 0;
+        font-size: 50px;
+        line-height: 1;
+
+        @media (min-width: 450px) {
+            font-size: 80px;
+        }
+    }
+
+    .cursor {
+        display: inline-block;
+        height: 40px;
+        width: 15px;
+        background-color: var(--secondary-theme-color);
+        margin-left: 10px;
+        animation-name: blink;
+        animation-duration: 1.2s;
+        animation-iteration-count: infinite;
+        animation-timing-function: step-end;
+        margin-bottom: 5px;
+
+        @media (min-width: 450px) {
+            height: 65px;
+            margin-bottom: 7px;
+            width: 30px;
+            margin-left: 15px;
+        }
+
     }
 }
+
+@keyframes blink {
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+
+}
+
 
