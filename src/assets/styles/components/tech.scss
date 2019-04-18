@@ -1,22 +1,182 @@
-#tech {
-    min-height: 200px;
-    width: 100%;
-    padding: 40px 5%;
+.tech {
+    height: calc(100vh - 60px);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-    .tech__row {
+    .carousel {
+        position: relative;
         width: 100%;
+        height: 100%;
         display: flex;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        // For firefox
+        scroll-snap-points-x: repeat(100%);
+
+        // Remove scrollbar
+        @media (min-width: 450px) {
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+              
+            &::-webkit-scrollbar {
+                display: none;
+              }
+        }
+    }
+
+    .scroll-section {
+        scroll-snap-align: center;
+        min-width: 100%;
+        display: flex;
+        flex-direction: column;
         align-items: center;
-        justify-content: space-between;
+        padding: 2rem 10% 2rem 10%;
+
+        @media (min-width: 450px) {
+            padding: 5rem 8rem 2rem 8rem;
+        }
+    }
+
+    .scroll-section__title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 2rem;
+    }
+
+    .scroll-section__title h1{
+        font-weight: 500;
+        margin: 0;
+        margin-bottom: .6rem;
+    }
+
+    .scroll-section__title div {
+        height: 4px;
+        width: 50px;
+        background-color: var(--secondary-theme-color);
+    }
+
+
+    .scroll-section__body {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
         flex-wrap: wrap;
+        justify-content: space-around;
+
+        @media (min-width: 450px) {
+            flex-direction: row;
+        }
     }
 
     img {
     height: auto;
     width: auto;
-    max-height: 200px;
-    max-width: 350px;
-    padding: 50px;
+    max-height: 80px;
+    max-width: 175px;
+    padding: 20px;
+
+    @media (min-width: 450px) {
+        width: auto;
+        max-height: 200px;
+        max-width: 200px;
+        padding: 50px;
+    }
+    }
+
+
+    .indicator {
+        width: 80%;
+        padding-bottom: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .indicator .arrow {
+        margin: 0 1rem;
+        color: gray;
+        font-size: 2.2rem;
+        height: 30px;
+        width: 30px;
+        background-color: transparent;
+        border: none;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @media (min-width: 450px) {
+            height: 60px;
+            width:60px;
+            border: 2px solid lightgray;
+            border-radius: 50%;
+
+            &:hover {
+                border-color: var(--secondary-theme-color);
+                color: var(--secondary-theme-color);
+                cursor: pointer;
+            }
+
+            &:focus {
+                outline: none;
+                color: var(--secondary-theme-color);
+            }
+        }
+    }
+
+
+    .indicator .arrow__icon--left, .indicator .arrow__icon--right {
+        height: 100%;
+        width: auto;
+    }
+
+    .indicator .arrow__icon--left {
+        transform: rotate(180deg);    
+    }
+
+    .indicator .arrow--right {
+        @media (min-width: 450px) {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+
+    .indicator .arrow--left {
+        @media (min-width: 450px) {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+    }
+
+
+    .indicator .circle {
+        padding: 0;
+        height: 20px;
+        width: 20px;
+        margin: .5rem;
+        border: 2px solid gray;
+        border-radius: 50%;
+        background-color: transparent;
+
+
+        &.active {
+            background-color: gray;
+        }
+    }
+
+    @media (min-width: 450px) {
+        height: auto;
     }
 
 

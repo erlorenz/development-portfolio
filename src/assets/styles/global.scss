@@ -35,3 +35,13 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+.section__anchor {
+  position: absolute;
+  z-index: -100;
+  top: -60px;
+
+   @media (min-width: 450px) {
+       top: -80px;
+   }
+}

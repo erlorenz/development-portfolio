@@ -1,10 +1,10 @@
-img.fade-image {
+img.fade-image--horizontal {
     opacity: 0;
     transform: translateY(15px);
     transition: opacity .6s ease, transform .6s ease;
 }
 
-img.fade-image.fade-in {
+img.fade-image--horizontal.fade-in {
     opacity: 1;
     transform: translateY(0);
 }

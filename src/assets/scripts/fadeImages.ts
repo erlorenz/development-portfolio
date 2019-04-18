@@ -1,8 +1,8 @@
 function fadeImages() {
-  const images = document.querySelectorAll('.fade-image');
+  // Fade images up and in
+  const images = document.querySelectorAll('.fade-image--horizontal');
   console.log(images);
 
-  // Load image 100px before coming into view
   const config = {
     threshold: 1,
   };

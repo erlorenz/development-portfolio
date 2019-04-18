@@ -79,15 +79,15 @@ class StickyNav extends LitElement {
         </li>
         <span>|</span>
         <li class="link">
-          <a href="#"> work</a>
+          <a href="#work"> work</a>
         </li>
         <span>|</span>
         <li class="link">
-          <a href="#"> about</a>
+          <a href="#about"> about</a>
         </li>
         <span>|</span>
         <li class="link">
-          <a href="#"> contact</a>
+          <a href="#contact"> contact</a>
         </li>
       </ul>
     `;
