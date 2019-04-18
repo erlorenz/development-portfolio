@@ -86,6 +86,10 @@
         max-height: 200px;
         max-width: 200px;
         padding: 50px;
+
+        &.image--wide {
+            max-width: 250px;
+        }
     }
     }
 
