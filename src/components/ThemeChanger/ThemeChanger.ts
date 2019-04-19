@@ -1,4 +1,4 @@
-import { LitElement, html, customElement, property, css } from 'lit-element';
+import { LitElement, html, customElement, css } from 'lit-element';
 
 @customElement('theme-changer')
 class ThemeChanger extends LitElement {

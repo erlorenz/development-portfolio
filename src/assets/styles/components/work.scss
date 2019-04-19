@@ -1,8 +1,0 @@
-#work {
-    min-height: calc(100vh - 60px);
-    background-color: #eee;
-
-    @media (min-width: 450px) {
-        min-height: calc(100vh - 80px);
-    }
-}
