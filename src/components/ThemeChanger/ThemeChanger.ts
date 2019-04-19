@@ -12,7 +12,7 @@ class ThemeChanger extends LitElement {
         top: 20px;
         right: 20px;
         height: 40px;
-        width: 80px;
+        width: 120px;
         background-color: transparent;
         z-index: 5000;
         opacity: 0;
@@ -45,11 +45,15 @@ class ThemeChanger extends LitElement {
       }
 
       .circle--red {
-        background-color: #ec4d37;
+        background-color: #ec3737;
       }
 
       .circle--green {
-        background-color: #ccf381;
+        background-color: #8bd8bd;
+      }
+
+      .circle--pink {
+        background-color: #eb2188;
       }
 
       @media (max-width: 450px) {
@@ -74,6 +78,12 @@ class ThemeChanger extends LitElement {
           @click="${() => this.changeTheme('green')}"
         ></div>
       </div>
+      <div class="swatch">
+        <div
+          class="circle circle--pink"
+          @click="${() => this.changeTheme('pink')}"
+        ></div>
+      </div>
     `;
   }
 
@@ -86,11 +96,15 @@ class ThemeChanger extends LitElement {
   }
 
   firstUpdated() {
+    // Check Local storage otherwise use default theme
     const theme = localStorage.getItem('theme');
     if (theme) {
       this.changeTheme(theme);
+    } else {
+      this.changeTheme('green');
     }
 
+    // Make theme changer show up after typing completed
     setTimeout(() => {
       if (!this.classList.contains('show')) this.classList.add('show');
     }, 5000);

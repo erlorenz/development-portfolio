@@ -10,6 +10,4 @@ function typewriter() {
   });
 }
 
-addEventListener('DOMContentLoaded', () => {
-  typewriter();
-});
+export default typewriter;
