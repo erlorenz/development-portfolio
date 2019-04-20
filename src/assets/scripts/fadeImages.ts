@@ -1,7 +1,6 @@
 function fadeImages() {
   // Fade images up and in
   const images = document.querySelectorAll('.fade-image--horizontal');
-  console.log(images);
 
   const config = {
     threshold: 1,

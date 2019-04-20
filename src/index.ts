@@ -13,6 +13,7 @@ import lazyImages from './assets/scripts/lazyImages';
 import fadeImages from './assets/scripts/fadeImages';
 import carousel from './assets/scripts/carousel';
 import techImageHover from './assets/scripts/techImageHover';
+import scrollSpy from './assets/scripts/scrollSpy';
 
 //  Polyfills
 import smoothscroll from 'smoothscroll-polyfill';
@@ -26,4 +27,5 @@ addEventListener('DOMContentLoaded', () => {
   fadeImages();
   carousel();
   techImageHover();
+  scrollSpy();
 });

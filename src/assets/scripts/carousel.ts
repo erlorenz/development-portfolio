@@ -26,12 +26,10 @@ function carousel() {
         if (entry.isIntersecting) {
           // Add active class
           circle.className = 'circle active';
-          console.log('Entering');
         }
 
         if (!entry.isIntersecting) {
           circle.className = 'circle';
-          console.log('Leaving');
         }
       });
     }, config);

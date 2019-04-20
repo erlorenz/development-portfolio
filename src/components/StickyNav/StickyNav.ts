@@ -1,5 +1,4 @@
 import { LitElement, html, customElement, css } from 'lit-element';
-import logo from '../../assets/img/erik_lorenz_logo.svg';
 
 @customElement('sticky-nav')
 class StickyNav extends LitElement {
@@ -18,6 +17,18 @@ class StickyNav extends LitElement {
         top: 0;
         align-items: center;
         z-index: 10;
+      }
+
+      :host(.spying--tech) .tech {
+        color: white;
+      }
+
+      :host(.spying--projects) .projects {
+        color: white;
+      }
+
+      :host(.spying--contact) .contact {
+        color: white;
       }
 
       ul {
@@ -154,11 +165,11 @@ class StickyNav extends LitElement {
 
       <ul>
         <li class="link">
-          <a href="#tech">tech</a>
+          <a class="tech" href="#tech">tech</a>
         </li>
         <span>|</span>
         <li class="link">
-          <a href="#projects">projects</a>
+          <a class="projects" href="#projects">projects</a>
         </li>
         <!-- <span>|</span> -->
         <!-- <li class="link">
@@ -166,7 +177,7 @@ class StickyNav extends LitElement {
         </li> -->
         <span>|</span>
         <li class="link">
-          <a href="#contact">contact</a>
+          <a class="contact" href="#contact">contact</a>
         </li>
       </ul>
     `;

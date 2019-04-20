@@ -2,6 +2,43 @@
     min-height: 200px;
     background-color: var(--primary-theme-color);
     position: relative;
-    color: white;
+    color: var(--secondary-theme-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+
+    @media (min-width: 450px) {
+        padding: 5rem;
+    }
+
+    .title {
+        font-size: 2rem;
+        color: var(--secondary-theme-color);
+    }
+
+    .contact-info {
+        font-size: 1.5rem;
+        color: var(--secondary-theme-color);
+        margin: .5rem;
+
+        &:hover {
+            color: white;
+        }
+    }
+
+    .social-media {
+        margin-top: 1rem;
+    }
+
+    svg {
+        fill: var(--secondary-theme-color);
+        height: 50px;
+        width: auto;
+
+        &:hover {
+            fill: white;
+        }
+    }
 
 }
