@@ -19,16 +19,48 @@ class StickyNav extends LitElement {
         z-index: 10;
       }
 
-      :host(.spying--tech) .tech {
-        color: white;
+
+      .link {
+        position: relative;
+        height: 100%;
+        display: flex;
+        align-items: center;
       }
 
-      :host(.spying--projects) .projects {
-        color: white;
+
+      .link--tech::after, .link--projects::after, .link--contact::after {
+        content: "";
+        display: block;
       }
 
-      :host(.spying--contact) .contact {
-        color: white;
+      :host(.spying--tech) .link--tech::after {
+        content: "",
+        display: block;
+        height: 6px;
+        width: 100%;
+        background-color: var(--secondary-theme-color);
+        position: absolute;
+        bottom: 0;
+      }
+
+      :host(.spying--projects) .link--projects::after {
+        content: "",
+        display: block;
+        height: 6px;
+        width: 100%;
+        background-color: var(--secondary-theme-color);
+        position: absolute;
+        bottom: 0;
+      }
+
+      :host(.spying--contact) .link--contact::after {
+        content: "",
+        display: block;
+        height: 6px;
+        width: 100%;
+        background-color: var(--secondary-theme-color);
+        position: absolute;
+        bottom: 0;
       }
 
       ul {
@@ -40,10 +72,10 @@ class StickyNav extends LitElement {
         list-style: none;
         margin: 0;
         padding: 0%;
-        transform: translateY(-15px);
+        transform: translateY(-15px) scale(1.2);
         transition: transform 0.5s ease;
-        height: 60px;
-        font-size: 20px;
+        height: 100%;
+        font-size: 16px;
       }
 
       span {
@@ -63,7 +95,7 @@ class StickyNav extends LitElement {
       }
 
       :host(.atTop) ul {
-        transform: scale(0.8) translateY(0);
+        transform: scale(1) translateY(0);
       }
 
       :host(.atTop) span {
@@ -164,11 +196,11 @@ class StickyNav extends LitElement {
       </a>
 
       <ul>
-        <li class="link">
+        <li class="link link--tech">
           <a class="tech" href="#tech">tech</a>
         </li>
         <span>|</span>
-        <li class="link">
+        <li class="link link--projects">
           <a class="projects" href="#projects">projects</a>
         </li>
         <!-- <span>|</span> -->
@@ -176,7 +208,7 @@ class StickyNav extends LitElement {
           <a href="#about">about</a>
         </li> -->
         <span>|</span>
-        <li class="link">
+        <li class="link link--contact">
           <a class="contact" href="#contact">contact</a>
         </li>
       </ul>
