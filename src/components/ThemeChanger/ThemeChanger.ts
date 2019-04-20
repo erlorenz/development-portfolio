@@ -2,7 +2,6 @@ import { LitElement, html, customElement, css, property } from 'lit-element';
 
 @customElement('theme-changer')
 class ThemeChanger extends LitElement {
-
   @property()
   private tooltipColor = '';
 
@@ -84,7 +83,7 @@ class ThemeChanger extends LitElement {
         top: -20px;
         height: 0;
         width: 0;
-        border: 10px solid var(--secondary-theme-color);;
+        border: 10px solid var(--secondary-theme-color);
         border-left-color: transparent;
         border-top-color: transparent;
         border-right-color: transparent;
@@ -110,7 +109,7 @@ class ThemeChanger extends LitElement {
           class="circle circle--red"
           @click="${() => this.changeTheme('red')}"
           @mouseover="${() => this.showTooltip('red')}"
-          @mouseout="${() => this.hideTooltip('red')}"
+          @mouseout="${() => this.hideTooltip()}"
         ></div>
       </div>
       <div class="swatch">
@@ -118,7 +117,7 @@ class ThemeChanger extends LitElement {
           class="circle circle--green"
           @click="${() => this.changeTheme('green')}"
           @mouseover="${() => this.showTooltip('green')}"
-          @mouseout="${() => this.hideTooltip('green')}"
+          @mouseout="${() => this.hideTooltip()}"
         ></div>
       </div>
       <div class="swatch">
@@ -126,18 +125,18 @@ class ThemeChanger extends LitElement {
           class="circle circle--pink"
           @click="${() => this.changeTheme('pink')}"
           @mouseover="${() => this.showTooltip('pink')}"
-          @mouseout="${() => this.hideTooltip('pink')}"
+          @mouseout="${() => this.hideTooltip()}"
         ></div>
       </div>
-      ${this.tooltipColor ? html`
-      <label>
-      ${this.tooltipColor}
-      </label>
-      ` : null}
+      ${this.tooltipColor
+        ? html`
+            <label>
+              ${this.tooltipColor}
+            </label>
+          `
+        : null}
     `;
   }
-
-
 
   firstUpdated() {
     // Check Local storage otherwise use default theme
@@ -164,7 +163,7 @@ class ThemeChanger extends LitElement {
 
   showTooltip(color: string) {
     let theme = '';
-    if (color === 'red') theme = 'black/red'; 
+    if (color === 'red') theme = 'black/red';
     if (color === 'green') theme = 'blue/green';
     if (color === 'pink') theme = 'blue/pink';
 
@@ -172,8 +171,8 @@ class ThemeChanger extends LitElement {
     console.log(theme);
   }
 
-  hideTooltip(color: string) {
-      this.tooltipColor = '';
+  hideTooltip() {
+    this.tooltipColor = '';
   }
 }
 
