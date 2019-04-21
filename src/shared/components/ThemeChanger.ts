@@ -5,6 +5,75 @@ class ThemeChanger extends LitElement {
   @property()
   private tooltipColor = '';
 
+  @property()
+  public vertical = false;
+
+  render() {
+    return html`
+      <div class="swatch">
+        <div
+          class="circle circle--red"
+          @click="${() => this.changeTheme('red')}"
+          @mouseover="${() => this.showTooltip('red')}"
+          @mouseout="${() => this.hideTooltip()}"
+        ></div>
+      </div>
+      <div class="swatch">
+        <div
+          class="circle circle--green"
+          @click="${() => this.changeTheme('green')}"
+          @mouseover="${() => this.showTooltip('green')}"
+          @mouseout="${() => this.hideTooltip()}"
+        ></div>
+      </div>
+      <div class="swatch">
+        <div
+          class="circle circle--pink"
+          @click="${() => this.changeTheme('pink')}"
+          @mouseover="${() => this.showTooltip('pink')}"
+          @mouseout="${() => this.hideTooltip()}"
+        ></div>
+      </div>
+    `;
+  }
+
+  firstUpdated() {
+    // Check Local storage otherwise use default theme
+    const theme = localStorage.getItem('theme');
+    if (theme) {
+      this.changeTheme(theme);
+    } else {
+      this.changeTheme('green');
+    }
+
+    // Make theme changer show up after typing completed
+    setTimeout(() => {
+      if (!this.classList.contains('show')) this.classList.add('show');
+    }, 5000);
+  }
+
+  changeTheme(color: string) {
+    const body = document.querySelector('body') as HTMLElement;
+    body.className = '';
+    body.classList.add(color + '-theme');
+    console.log('Changed theme to', color);
+    localStorage.setItem('theme', color);
+  }
+
+  showTooltip(color: string) {
+    let theme = '';
+    if (color === 'red') theme = 'black/red';
+    if (color === 'green') theme = 'blue/green';
+    if (color === 'pink') theme = 'blue/pink';
+
+    this.tooltipColor = theme;
+    console.log(theme);
+  }
+
+  hideTooltip() {
+    this.tooltipColor = '';
+  }
+
   static get styles() {
     return css`
       :host {
@@ -29,7 +98,7 @@ class ThemeChanger extends LitElement {
       .swatch {
         box-sizing: inherit;
         width: 100%;
-        height: 100%;
+        height: 40px;
         padding: 5px;
       }
 
@@ -75,104 +144,25 @@ class ThemeChanger extends LitElement {
         border-radius: 10px;
       }
 
-      .arrow {
-        display: block;
+      :host([vertical]) {
+        flex-direction: column;
+        width: 40px;
+        height: 120px;
+        opacity: 1;
+        top: auto;
+        right: 20px;
+        bottom: 40px;
         position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        top: -20px;
-        height: 0;
-        width: 0;
-        border: 10px solid var(--secondary-theme-color);
-        border-left-color: transparent;
-        border-top-color: transparent;
-        border-right-color: transparent;
-      }
-
-      .arrow.left {
-        transform: translateX(-50%);
-        left: 15%;
       }
 
       @media (max-width: 450px) {
         :host {
           display: none;
+          bottom: 20px;
+          left: 20px;
         }
       }
     `;
-  }
-
-  render() {
-    return html`
-      <div class="swatch">
-        <div
-          class="circle circle--red"
-          @click="${() => this.changeTheme('red')}"
-          @mouseover="${() => this.showTooltip('red')}"
-          @mouseout="${() => this.hideTooltip()}"
-        ></div>
-      </div>
-      <div class="swatch">
-        <div
-          class="circle circle--green"
-          @click="${() => this.changeTheme('green')}"
-          @mouseover="${() => this.showTooltip('green')}"
-          @mouseout="${() => this.hideTooltip()}"
-        ></div>
-      </div>
-      <div class="swatch">
-        <div
-          class="circle circle--pink"
-          @click="${() => this.changeTheme('pink')}"
-          @mouseover="${() => this.showTooltip('pink')}"
-          @mouseout="${() => this.hideTooltip()}"
-        ></div>
-      </div>
-      ${this.tooltipColor
-        ? html`
-            <label>
-              ${this.tooltipColor}
-            </label>
-          `
-        : null}
-    `;
-  }
-
-  firstUpdated() {
-    // Check Local storage otherwise use default theme
-    const theme = localStorage.getItem('theme');
-    if (theme) {
-      this.changeTheme(theme);
-    } else {
-      this.changeTheme('green');
-    }
-
-    // Make theme changer show up after typing completed
-    setTimeout(() => {
-      if (!this.classList.contains('show')) this.classList.add('show');
-    }, 5000);
-  }
-
-  changeTheme(color: string) {
-    const body = document.querySelector('body') as HTMLElement;
-    body.className = '';
-    body.classList.add(color + '-theme');
-    console.log('Changed theme to', color);
-    localStorage.setItem('theme', color);
-  }
-
-  showTooltip(color: string) {
-    let theme = '';
-    if (color === 'red') theme = 'black/red';
-    if (color === 'green') theme = 'blue/green';
-    if (color === 'pink') theme = 'blue/pink';
-
-    this.tooltipColor = theme;
-    console.log(theme);
-  }
-
-  hideTooltip() {
-    this.tooltipColor = '';
   }
 }
 

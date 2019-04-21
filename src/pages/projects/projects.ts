@@ -1,3 +1,6 @@
-import './components/DetailsLayout';
+import './styles/index.scss';
 
-console.log('PROJECTS PAGE WORKING');
+// Components
+import './components/ProjectLayout';
+
+// Scripts
