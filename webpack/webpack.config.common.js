@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
-const path = require('path');
 
 module.exports = {
   entry: {
@@ -57,12 +56,12 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: './src/pages/main/main.html',
       filename: 'index.html',
-      chunks: ['main'],
+      chunks: ['main', 'webpack-runtime', 'vendor'],
     }),
     new HtmlWebPackPlugin({
       template: './src/pages/projects/projects.html',
       filename: 'projects/index.html',
-      chunks: ['projects'],
+      chunks: ['projects', 'webpack-runtime', 'vendor'],
     }),
     new CopyPlugin([{ from: 'public' }]), // Copy things like favicons, 3rd party files
   ],

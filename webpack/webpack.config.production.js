@@ -37,10 +37,20 @@ module.exports = merge(common, {
   ],
   optimization: {
     minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
-    // Dont split because each page has a totally separate entry point
-    // splitChunks: {
-    //   chunks: 'all',
-    // },
-    // runtimeChunk: true,
+
+    // Split out a vendor chunk so that it's cached for rest of pages
+    splitChunks: {
+      cacheGroups: {
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendor',
+          chunks: 'initial',
+          minChunks: 2,
+        },
+      },
+    },
+    runtimeChunk: {
+      name: 'webpack-runtime',
+    },
   },
 });

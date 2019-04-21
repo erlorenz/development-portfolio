@@ -27,11 +27,4 @@ module.exports = merge(common, {
     hot: true,
   },
   plugins: [new webpack.HotModuleReplacementPlugin()],
-
-  //Multi Page Site, only split per entry point or async
-  // optimization: {
-  //   splitChunks: {
-  //     chunks: 'all',
-  //   },
-  // },
 });
