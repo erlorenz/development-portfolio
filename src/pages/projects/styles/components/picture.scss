@@ -1,0 +1,32 @@
+#picture {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+
+
+    .overlay {
+        background-color: var(--secondary-theme-color);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        opacity: .4;
+        mix-blend-mode: multiply;
+    }
+
+    img {
+        height: auto;
+        width: auto;
+        max-height: 80%;
+        max-width: 80%;
+        z-index: 0;
+        transition: transform 3s ease;
+        transform: rotate(25deg);
+    }
+}

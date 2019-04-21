@@ -1,6 +1,11 @@
 import './styles/index.scss';
+import '../../shared/components/ThemeChanger';
 
 // Components
-import './components/ProjectLayout';
 
 // Scripts
+import lazyImages from '../../shared/scripts/lazyImages';
+
+addEventListener('DOMContentLoaded', () => {
+  lazyImages();
+});

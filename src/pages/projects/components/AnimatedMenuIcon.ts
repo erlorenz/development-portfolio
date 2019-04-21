@@ -44,6 +44,7 @@ class AnimatedMenuIcon extends LitElement {
         width: 80px;
         height: 50px;
         transition: transform 0.8s ease;
+        z-index: 5000;
       }
 
       .container {

@@ -8,7 +8,7 @@ import '../../shared/components/ThemeChanger';
 // Scripts
 import isAtTop from './scripts/isAtTop';
 import typewriter from './scripts/typewriter';
-import lazyImages from './scripts/lazyImages';
+import lazyImages from '../../shared/scripts/lazyImages';
 import fadeImages from './scripts/fadeImages';
 import carousel from './scripts/carousel';
 import techImageHover from './scripts/techImageHover';

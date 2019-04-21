@@ -76,15 +76,14 @@ class ThemeChanger extends LitElement {
 
   static get styles() {
     return css`
-      :host {
+      * {
         box-sizing: border-box;
+      }
+      :host {
         display: flex;
-        position: fixed;
         justify-content: space-between;
-        top: 20px;
-        right: 40px;
-        height: 40px;
-        width: 120px;
+        height: 100%;
+        width: 100%;
         background-color: transparent;
         z-index: 5000;
         opacity: 0;
@@ -96,14 +95,12 @@ class ThemeChanger extends LitElement {
       }
 
       .swatch {
-        box-sizing: inherit;
         width: 100%;
         height: 40px;
         padding: 5px;
       }
 
       .circle {
-        box-sizing: inherit;
         width: 100%;
         height: 100%;
         border: 3px solid lightgray;
@@ -126,33 +123,6 @@ class ThemeChanger extends LitElement {
 
       .circle--pink {
         background-color: #eb2188;
-      }
-
-      label {
-        position: absolute;
-        font-size: 1.2rem;
-        height: 30px;
-        width: 100%;
-        color: white;
-        background-color: var(--secondary-theme-color);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        bottom: -40px;
-        left: 50%;
-        transform: translateX(-50%);
-        border-radius: 10px;
-      }
-
-      :host([vertical]) {
-        flex-direction: column;
-        width: 40px;
-        height: 120px;
-        opacity: 1;
-        top: auto;
-        right: 20px;
-        bottom: 40px;
-        position: absolute;
       }
 
       @media (max-width: 450px) {
