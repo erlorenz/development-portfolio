@@ -33,7 +33,7 @@ class StickyNav extends LitElement {
         display: block;
       }
 
-      :host(.spying--tech) .link--tech::after {
+      :host(.spying--tech.atTop) .link--tech::after {
         content: "",
         display: block;
         height: 6px;
@@ -43,7 +43,7 @@ class StickyNav extends LitElement {
         bottom: 0;
       }
 
-      :host(.spying--projects) .link--projects::after {
+      :host(.spying--projects.atTop) .link--projects::after {
         content: "",
         display: block;
         height: 6px;
@@ -53,7 +53,7 @@ class StickyNav extends LitElement {
         bottom: 0;
       }
 
-      :host(.spying--contact) .link--contact::after {
+      :host(.spying--contact.atTop) .link--contact::after {
         content: "",
         display: block;
         height: 6px;
@@ -88,6 +88,9 @@ class StickyNav extends LitElement {
         color: var(--secondary-theme-color);
         text-decoration: none;
         position: relative;
+        display: flex;
+        height: 100%;
+        align-items: center;
       }
 
       a:hover {
