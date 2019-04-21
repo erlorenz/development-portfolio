@@ -13,7 +13,7 @@ class ThemeChanger extends LitElement {
         position: fixed;
         justify-content: space-between;
         top: 20px;
-        right: 20px;
+        right: 40px;
         height: 40px;
         width: 120px;
         background-color: transparent;

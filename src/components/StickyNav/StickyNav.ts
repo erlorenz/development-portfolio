@@ -118,16 +118,17 @@ class StickyNav extends LitElement {
         }
 
         ul {
-          font-size: 40px;
+          font-size: 30px;
           height: 100%;
         }
 
         a.logo {
           display: block;
           position: absolute;
-          left: 25px;
+          left: 40px;
           opacity: 0;
           transition: opacity 0.5s ease;
+          transition-delay: .5s;
           height: 100%;
           display: flex;
           align-items: center;
