@@ -7,7 +7,7 @@ const path = require('path');
 module.exports = merge(common, {
   mode: 'development',
   output: {
-    filename: '[name].bundle.js', // dont use hash in dev mode
+    filename: '[name].js', // dont use hash in dev mode
     chunkFilename: '[name].chunk.js',
     path: path.resolve(__dirname, 'dist'),
   },
@@ -27,9 +27,11 @@ module.exports = merge(common, {
     hot: true,
   },
   plugins: [new webpack.HotModuleReplacementPlugin()],
-  optimization: {
-    splitChunks: {
-      chunks: 'all',
-    },
-  },
+
+  //Multi Page Site, only split per entry point or async
+  // optimization: {
+  //   splitChunks: {
+  //     chunks: 'all',
+  //   },
+  // },
 });

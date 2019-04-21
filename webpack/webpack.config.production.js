@@ -10,9 +10,10 @@ const path = require('path');
 module.exports = merge(common, {
   mode: 'production',
   output: {
-    filename: '[name].[chunkhash].js',
-    chunkFilename: '[name].[chunkhash].chunk.js',
+    filename: 'assets/scripts/[name].[chunkhash].js',
+    chunkFilename: 'assets/scripts/[name].[chunkhash].chunk.js',
     path: path.resolve(process.cwd(), 'dist'),
+    publicPath: '/',
   },
   module: {
     rules: [
@@ -30,33 +31,16 @@ module.exports = merge(common, {
   plugins: [
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: '[name].css',
-      chunkFilename: '[id].css',
+      filename: 'assets/styles/[name].[hash].css',
+      chunkFilename: 'assets/styles/[id].[hash].css',
     }),
   ],
   optimization: {
     minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
-    splitChunks: {
-      chunks: 'all',
-      minSize: 30000,
-      minChunks: 1,
-      maxAsyncRequests: 5,
-      maxInitialRequests: 3,
-      name: true,
-      cacheGroups: {
-        commons: {
-          test: /[\\/]node_modules[\\/]/,
-          name: 'vendor',
-          chunks: 'all',
-        },
-        main: {
-          chunks: 'all',
-          minChunks: 2,
-          reuseExistingChunk: true,
-          enforce: true,
-        },
-      },
-    },
-    runtimeChunk: true,
+    // Dont split because each page has a totally separate entry point
+    // splitChunks: {
+    //   chunks: 'all',
+    // },
+    // runtimeChunk: true,
   },
 });

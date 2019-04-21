@@ -1,6 +1,6 @@
 import { LitElement, customElement, html, property, css } from 'lit-element';
-import '../SideMenu/SideMenu.ts';
-import '../TopBar/TopBar.ts';
+// import '../SideMenu/SideMenu.ts';
+// import '../TopBar/TopBar.ts';
 
 @customElement('details-layout')
 class DetailsLayout extends LitElement {
@@ -72,11 +72,11 @@ class DetailsLayout extends LitElement {
   render() {
     return html`
       <!-- Topbar on mobile always visible -->
-      <top-bar @toggleSideMenu="${this.toggleOpen}"></top-bar>
+      <!-- <top-bar @toggleSideMenu="${this.toggleOpen}"></top-bar> -->
       <!-- Canvas slides based on _isOpen state -->
       <div class="sliding-canvas ${this._isOpen ? 'slide' : ''}">
         <!-- Custom event from side menu -->
-        <side-menu @toggleSideMenu="${this.toggleOpen}"></side-menu>
+        <!-- <side-menu @toggleSideMenu="${this.toggleOpen}"></side-menu> -->
         <!-- Overlay appears on menu open -->
         <div class="overlay ${this._isOpen ? 'show' : ''}"></div>
         <main>
