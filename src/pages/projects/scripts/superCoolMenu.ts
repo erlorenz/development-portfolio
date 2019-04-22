@@ -17,6 +17,8 @@ function superCoolMenu() {
     if (!isOpen) {
       // Open the canvas do the list with delay
       canvas.classList.add('open');
+      // Remove hide class and start the staggered entrance
+      listItems.forEach(item => item.classList.remove('hide'));
       staggeredList('.side-menu__item', 'show', 120);
       sideMenu.classList.add('open');
     } else {
@@ -24,6 +26,8 @@ function superCoolMenu() {
       canvas.classList.remove('open');
       sideMenu.classList.remove('open');
       listItems.forEach(item => {
+        // Immediately hide list items then remove transform
+        item.classList.add('hide');
         item.classList.remove('show');
       });
     }

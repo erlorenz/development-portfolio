@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="Description" content="Press Express web app created with React.">
+    <meta name="Description" content="Press Express back end server with Node.JS">
     <title>Press Express Back End (Node)</title>
 </head>
 
@@ -42,14 +42,14 @@
                 </div>
             </nav>
             <section id="picture">
-                <img data-src="../../../shared/images/mobile-landing.jpg" class="lazy-image"
-                    alt="Mobile landing page for Press Express">
+                <img data-src="../../../shared/images/macbook-graphql.jpg" class="lazy-image"
+                    alt="Back end GraphQL on a computer">
                 <div class="overlay"></div>
                 <header>
                     <div class="header__main">
-                        <h1>Press Express Web App (React)</h1>
+                        <h1>Press Express Back End (Node)</h1>
                         <div class="header__links">
-                            <a class="header__link" href="https://github.com/erlorenz/pepublic" target="_blank"
+                            <a class="header__link" href="https://github.com/erlorenz/peserver" target="_blank"
                                 rel="noopener noreferrer" aria-label="Go to Github repository">
                                 <svg alt="Github logo" version="1.2" baseProfile="tiny" id="github"
                                     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -62,8 +62,8 @@
                                c0,264.4-185.1,458.3-575.7,499.4c108.7,55.8,185.1,214.4,185.1,331.9V2256c0,8.8-2.9,17.6-2.9,26.4
                                C2021,2123.8,2350,1689.1,2350,1175C2350,525.8,1824.2,0,1175,0L1175,0z" />
                                 </svg>
-                            </a><a class="header__link" href="https://staging.pressexpresslv.com" target="_blank"
-                                rel="noopener noreferrer" aria-label="Go to Press Express web page">
+                            </a><a class="header__link" href="https://press-express-staging.appspot.com/graphql"
+                                target="_blank" rel="noopener noreferrer" aria-label="Go to Press Express server">
                                 <svg alt="Eye" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
                                     xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 512 512">
                                     <g>
@@ -79,23 +79,23 @@
                             <span></span>Tech<span></span>
                         </div>
                         <ul class="header__tech-list">
-                            <li class="tech__item">context API</li>
+                            <li class="tech__item">google app engine</li>
                             <li class="dot">&middot</li>
-                            <li class="tech__item">formik</li>
+                            <li class="tech__item">postgresql</li>
                             <li class="dot">&middot</li>
-                            <li class="tech__item">luxon</li>
+                            <li class="tech__item">graphql</li>
                             <li class="dot">&middot</li>
-                            <li class="tech__item">react hooks</li>
+                            <li class="tech__item">express</li>
                             <li class="dot">&middot</li>
                             <li class="tech__item">stripe</li>
                             <li class="dot">&middot</li>
-                            <li class="tech__item">styled-components</li>
+                            <li class="tech__item">joi</li>
                             <li class="dot">&middot</li>
-                            <li class="tech__item">yup</li>
+                            <li class="tech__item">mailjet</li>
                             <li class="dot">&middot</li>
-                            <li class="tech__item">react-snap</li>
+                            <li class="tech__item">twilio</li>
                             <li class="dot">&middot</li>
-                            <li class="tech__item">redux</li>
+                            <li class="tech__item">objection.js</li>
                         </ul>
                     </div>
                 </header>
@@ -106,53 +106,51 @@
                     <div></div>
                 </div>
                 <p class="overview__text">
-                    SPA with SEO-optimized landing page and a modern, interactive web app.
+                    Node.js server running on Google App Engine and connected to a PostgresQL database.
                 </p>
-                <p class="overview__text"> Customers can schedule a pickup and return, choose the items they will be
-                    dropping
-                    off, add any
-                    special instructions, and complete their payment.</p>
+                <p class="overview__text"> Communicates with public web app, admin dashboard, and 3rd party
+                    communications services to receive, display, and modify customer orders.</p>
             </section>
 
             <section id="challenges">
                 <div class="challenges__grid-item">
                     <div class="challenges__title">
-                        <h3>Time/Date Manipulation</h3>
+                        <h3>Storing/Retrieving Data</h3>
                         <div></div>
                     </div>
                     <div class="challenges__body">
-                        <p>PROBLEM: The scheduling section requires several
-                            different date/time
-                            formats for displaying,
-                            manipulating, receiving input, transmitting to the server, and storing in the
-                            database. <br> All times must be presented in PST regardless of device clock.
+                        <p>PROBLEM: Initially data was stored and accessed in MongoDB database due to unknown
+                            requirements.
+                            <br> Customer order data is highly relational and would be better served with a RDMS but
+                            many Node.js ORMs are immature or poorly documented.
                         </p>
                         <p>
-                            SOLUTOIN: Tried several different libraries including
-                            Moment, Dayjs,
-                            Luxon, and
-                            Date-fns.
-                            <br> Chose Luxon as it was smaller than Moment but also has time zone features. If only user
-                            time zone mattered Dayjs would have been the best solution due to size.
+                            SOLUTION: After attempts with Sequelize and Knex.js, the best option was to use Objection.js
+                            as it simplifies relationships between models and connects well with PostgresQL.
+                            <br> Currently migrating to TypeScript and TypeORM due to ability to support
+                            automatic GraphQL schema/type generation to avoid duplicating work whenever
+                            writing/modifying models.
                         </p>
                     </div>
                 </div>
 
                 <div class="challenges__grid-item">
                     <div class="challenges__title">
-                        <h3>Optimization</h3>
+                        <h3>Architecture</h3>
                         <div></div>
                     </div>
                     <div class="challenges__body">
-                        <p>PROBLEM: The landing page was unable to render in Google Search or Bing Search in order to be
-                            indexed. <br> The page was also loading slow due to render blocking javascript and large
-                            images, and scroll events were causing jank.
+                        <p>PROBLEM: Express.js is a very lightweight framework with by far the most community resources,
+                            however there is no consensus on structure and Async/Await error handling is outdated.
+                            <br> For an API server a well-defined framework to avoid reinventing error handling,
+                            architecture, and other common conventions would speed up development.
                         </p>
                         <p>
-                            SOLUTION: Added post-build step to prerender content to static HTML.
-                            <br> Used React.Lazy to load minimum necessary javascript and
-                            created useIntersectionObserver hook to lazy load images and add animation without
-                            scroll events.
+                            SOLUTION: Sampled Koa.js as it is more modern yet similar to Express.
+                            <br> Will continue to explore Nest.js as it has the most community momentum and is a
+                            higher-level and rigidly structured framework.
+                            <br> Currently migrating to TypeScript and will continue to further standardize error
+                            handling, route and controller architecture, and logging.
                         </p>
                     </div>
                 </div>
