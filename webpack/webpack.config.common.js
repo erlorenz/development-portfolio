@@ -2,6 +2,7 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
+const generateHTMLPlugins = require('./generateHTMLPlugins');
 
 module.exports = {
   entry: {
@@ -57,20 +58,11 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: './src/pages/main/main.html',
       filename: 'index.html',
-
       // Only needed for multi page project, otherwise let it inject all necessary
       chunks: ['main', 'vendor'],
     }),
-    new HtmlWebPackPlugin({
-      template: './src/pages/projects/views/peappreact.html',
-      filename: 'projects/peappreact/index.html',
-      chunks: ['projects', 'vendor'],
-    }),
-    new HtmlWebPackPlugin({
-      template: './src/pages/projects/views/personalportfolio.html',
-      filename: 'projects/personalportfolio/index.html',
-      chunks: ['projects', , 'vendor'],
-    }),
+    // Generate the HTML Webpack Plugins for project pages
+    ...generateHTMLPlugins(),
     new CopyPlugin([{ from: 'public' }]), // Copy things like favicons, 3rd party files
     new FriendlyErrorsWebpackPlugin(),
   ],

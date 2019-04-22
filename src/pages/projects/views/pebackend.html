@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Press Express web app created with React.">
+    <title>Press Express Back End (Node)</title>
+</head>
+
+<body>
+    <div class="overflow-container">
+        <animated-mouse></animated-mouse>
+        <div class="sliding-canvas">
+            <nav id="side-menu">
+                <ul class="side-menu__list">
+                    <li class="side-menu__item active">
+                        <a href="#" class="side-menu__link">P.E. App (React)</a>
+                    </li>
+                    <li class="side-menu__item">
+                        <a href="#" class="side-menu__link">P.E. App (Vue)</a>
+                    </li>
+                    <li class="side-menu__item">
+                        <a href="#" class="side-menu__link">P.E. Back End</a>
+                    </li>
+                    <li class="side-menu__item">
+                        <a href="#" class="side-menu__link">Webpack/TS Boilerplate</a>
+                    </li>
+                    <li class="side-menu__item">
+                        <a href="/projects/personalportfolio" class="side-menu__link">Personal Portfolio</a>
+                    </li>
+                    <li class="side-menu__item">
+                        <a href="/" class="side-menu__link">Home</a>
+                    </li>
+                </ul>
+                <div class="theme-changer-container">
+                    <theme-changer dark></theme-changer>
+                </div>
+            </nav>
+            <section id="picture">
+                <img data-src="../../../shared/images/mobile-landing.jpg" class="lazy-image"
+                    alt="Mobile landing page for Press Express">
+                <div class="overlay"></div>
+                <header>
+                    <div class="header__main">
+                        <h1>Press Express Web App (React)</h1>
+                        <div class="header__links">
+                            <a class="header__link" href="https://github.com/erlorenz/pepublic" target="_blank"
+                                rel="noopener noreferrer" aria-label="Go to Github repository">
+                                <svg alt="Github logo" version="1.2" baseProfile="tiny" id="github"
+                                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                    x="0px" y="0px" viewBox="0 0 2350 2314.8" xml:space="preserve">
+                                    <path d="M1175,0C525.8,0,0,525.8,0,1175c0,552.2,378.9,1010.5,890.1,1139.7c-5.9-14.7-8.8-35.3-8.8-55.8v-199.8H734.4
+                               c-79.3,0-152.8-35.2-185.1-99.9c-38.2-70.5-44.1-179.2-141-246.8c-29.4-23.5-5.9-47,26.4-44.1c61.7,17.6,111.6,58.8,158.6,120.4
+                               c47,61.7,67.6,76.4,155.7,76.4c41.1,0,105.7-2.9,164.5-11.8c32.3-82.3,88.1-155.7,155.7-190.9c-393.6-47-581.6-240.9-581.6-505.3
+                               c0-114.6,49.9-223.3,132.2-317.3c-26.4-91.1-61.7-279.1,11.8-352.5c176.3,0,282,114.6,308.4,143.9c88.1-29.4,185.1-47,284.9-47
+                               c102.8,0,196.8,17.6,284.9,47c26.4-29.4,132.2-143.9,308.4-143.9c70.5,70.5,38.2,261.4,8.8,352.5c82.3,91.1,129.3,202.7,129.3,317.3
+                               c0,264.4-185.1,458.3-575.7,499.4c108.7,55.8,185.1,214.4,185.1,331.9V2256c0,8.8-2.9,17.6-2.9,26.4
+                               C2021,2123.8,2350,1689.1,2350,1175C2350,525.8,1824.2,0,1175,0L1175,0z" />
+                                </svg>
+                            </a><a class="header__link" href="https://staging.pressexpresslv.com" target="_blank"
+                                rel="noopener noreferrer" aria-label="Go to Press Express web page">
+                                <svg alt="Eye" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 512 512">
+                                    <g>
+                                        <path
+                                            d="m494.8,241.4l-50.6-49.4c-50.1-48.9-116.9-75.8-188.2-75.8s-138.1,26.9-188.2,75.8l-50.6,49.4c-11.3,12.3-4.3,25.4 0,29.2l50.6,49.4c50.1,48.9 116.9,75.8 188.2,75.8s138.1-26.9 188.2-75.8l50.6-49.4c4-3.8 11.7-16.4 0-29.2zm-238.8,84.4c-38.5,0-69.8-31.3-69.8-69.8 0-38.5 31.3-69.8 69.8-69.8 38.5,0 69.8,31.3 69.8,69.8 0,38.5-31.3,69.8-69.8,69.8zm-195.3-69.8l35.7-34.8c27-26.4 59.8-45.2 95.7-55.4-28.2,20.1-46.6,53-46.6,90.1 0,37.1 18.4,70.1 46.6,90.1-35.9-10.2-68.7-29-95.7-55.3l-35.7-34.7zm355,34.8c-27,26.3-59.8,45.1-95.7,55.3 28.2-20.1 46.6-53 46.6-90.1 0-37.2-18.4-70.1-46.6-90.1 35.9,10.2 68.7,29 95.7,55.4l35.6,34.8-35.6,34.7z" />
+                                    </g>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="header__tech">
+                        <div class="header__tech-label">
+                            <span></span>Tech<span></span>
+                        </div>
+                        <ul class="header__tech-list">
+                            <li class="tech__item">context API</li>
+                            <li class="dot">&middot</li>
+                            <li class="tech__item">formik</li>
+                            <li class="dot">&middot</li>
+                            <li class="tech__item">luxon</li>
+                            <li class="dot">&middot</li>
+                            <li class="tech__item">react hooks</li>
+                            <li class="dot">&middot</li>
+                            <li class="tech__item">stripe</li>
+                            <li class="dot">&middot</li>
+                            <li class="tech__item">styled-components</li>
+                            <li class="dot">&middot</li>
+                            <li class="tech__item">yup</li>
+                            <li class="dot">&middot</li>
+                            <li class="tech__item">react-snap</li>
+                            <li class="dot">&middot</li>
+                            <li class="tech__item">redux</li>
+                        </ul>
+                    </div>
+                </header>
+            </section>
+            <section id="overview">
+                <div class="overview__title">
+                    <h3>Overview</h3>
+                    <div></div>
+                </div>
+                <p class="overview__text">
+                    SPA with SEO-optimized landing page and a modern, interactive web app.
+                </p>
+                <p class="overview__text"> Customers can schedule a pickup and return, choose the items they will be
+                    dropping
+                    off, add any
+                    special instructions, and complete their payment.</p>
+            </section>
+
+            <section id="challenges">
+                <div class="challenges__grid-item">
+                    <div class="challenges__title">
+                        <h3>Time/Date Manipulation</h3>
+                        <div></div>
+                    </div>
+                    <div class="challenges__body">
+                        <p>PROBLEM: The scheduling section requires several
+                            different date/time
+                            formats for displaying,
+                            manipulating, receiving input, transmitting to the server, and storing in the
+                            database. <br> All times must be presented in PST regardless of device clock.
+                        </p>
+                        <p>
+                            SOLUTOIN: Tried several different libraries including
+                            Moment, Dayjs,
+                            Luxon, and
+                            Date-fns.
+                            <br> Chose Luxon as it was smaller than Moment but also has time zone features. If only user
+                            time zone mattered Dayjs would have been the best solution due to size.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="challenges__grid-item">
+                    <div class="challenges__title">
+                        <h3>Optimization</h3>
+                        <div></div>
+                    </div>
+                    <div class="challenges__body">
+                        <p>PROBLEM: The landing page was unable to render in Google Search or Bing Search in order to be
+                            indexed. <br> The page was also loading slow due to render blocking javascript and large
+                            images, and scroll events were causing jank.
+                        </p>
+                        <p>
+                            SOLUTION: Added post-build step to prerender content to static HTML.
+                            <br> Used React.Lazy to load minimum necessary javascript and
+                            created useIntersectionObserver hook to lazy load images and add animation without
+                            scroll events.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+
+</html>
