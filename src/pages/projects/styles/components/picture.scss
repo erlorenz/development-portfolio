@@ -127,21 +127,33 @@
     }
 
     .header__tech-list {
-        display: flex;
+        display: grid;
         width: 100%;
         padding: 0 5%;
         margin: 0;
-        justify-content: space-between;
-        align-items: center;
         color: white;   
         font-size: 1rem;
-        flex-wrap: wrap;
-        padding-bottom: 1em;
+        padding-bottom: 1rem;
+        align-items: center;
+        grid-template-columns: repeat(17, max-content);
+        justify-content: center;
+        grid-column-gap: .5rem;
+
+        @media (max-width: 450px) {
+            font-size: .9rem;
+            grid-template-columns: repeat(3, minmax(max-content, 1fr));
+            justify-items: center;
+            grid-template-rows: repeat(3, 1fr);
+        }
     }
 
     span.dot {
         color: white;
         opacity: .7;
         font-size: 2rem;
+
+        @media (max-width: 450px) {
+            display: none;
+        }
     }
 }

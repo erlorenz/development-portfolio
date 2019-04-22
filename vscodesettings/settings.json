@@ -1,4 +1,9 @@
-{    "editor.formatOnSave": true,
+{
+    "files.associations": {
+        ".prettierrc": "json"
+    },
+    "breadcrumbs.enabled": false,
+    "editor.formatOnSave": true,
     "[javascript]": {
         "editor.formatOnSave": false
     },
@@ -23,5 +28,8 @@
             "language": "vue",
             "autoFix": true,
         }
-    ]
+    ],
+    "files.eol": "\n",
+    "editor.fontFamily": "'Fira Code', Consolas, 'Courier New', monospace",
+    "editor.fontLigatures": true
 }
