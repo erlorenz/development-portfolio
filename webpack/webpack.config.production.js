@@ -49,8 +49,9 @@ module.exports = merge(common, {
         },
       },
     },
-    runtimeChunk: {
-      name: 'webpack-runtime',
-    },
+    // Chunk is so small separating it makes it worse
+    // runtimeChunk: {
+    //   name: 'webpack-runtime',
+    // },
   },
 });

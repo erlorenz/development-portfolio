@@ -2,157 +2,13 @@ import { LitElement, html, customElement, css } from 'lit-element';
 
 @customElement('sticky-nav')
 class StickyNav extends LitElement {
-  static get styles() {
-    return css`
-      :host {
-        position: relative;
-        box-sizing: border-box;
-        display: flex;
-        justify-content: center;
-        position: sticky;
-        width: 100%;
-        height: 60px;
-        background-color: var(--primary-theme-color);
-        color: var(--secondary-theme-color);
-        top: 0;
-        align-items: center;
-        z-index: 10;
-      }
-
-
-      .link {
-        position: relative;
-        height: 100%;
-        display: flex;
-        align-items: center;
-      }
-
-
-      .link--tech::after, .link--projects::after, .link--contact::after {
-        content: "";
-        display: block;
-      }
-
-      :host(.spying--tech.atTop) .link--tech::after {
-        content: "",
-        display: block;
-        height: 6px;
-        width: 100%;
-        background-color: var(--secondary-theme-color);
-        position: absolute;
-        bottom: 0;
-      }
-
-      :host(.spying--projects.atTop) .link--projects::after {
-        content: "",
-        display: block;
-        height: 6px;
-        width: 100%;
-        background-color: var(--secondary-theme-color);
-        position: absolute;
-        bottom: 0;
-      }
-
-      :host(.spying--contact.atTop) .link--contact::after {
-        content: "",
-        display: block;
-        height: 6px;
-        width: 100%;
-        background-color: var(--secondary-theme-color);
-        position: absolute;
-        bottom: 0;
-      }
-
-      ul {
-        box-sizing: inherit;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        list-style: none;
-        margin: 0;
-        padding: 0%;
-        transform: translateY(-15px) scale(1.2);
-        transition: transform 0.5s ease;
-        height: 100%;
-        font-size: 16px;
-      }
-
-      span {
-        color: var(--secondary-theme-color);
-        margin: 0 0.5rem;
-        transition: opacity 0.5s ease, transform 0.5s ease;
-      }
-
-      a {
-        color: var(--secondary-theme-color);
-        text-decoration: none;
-        position: relative;
-        display: flex;
-        height: 100%;
-        align-items: center;
-      }
-
-      a:hover {
-        color: white;
-      }
-
-      :host(.atTop) ul {
-        transform: scale(1) translateY(0);
-      }
-
-      :host(.atTop) span {
-        opacity: 0;
-        transform: translateY(-15px);
-      }
-
-      path,
-      rect {
-        fill: currentColor;
-      }
-
-      svg {
-        display: none;
-      }
-
-      @media (min-width: 450px) {
-        :host {
-          height: 80px;
-        }
-
-        ul {
-          font-size: 30px;
-          height: 100%;
-        }
-
-        a.logo {
-          display: block;
-          position: absolute;
-          left: 40px;
-          opacity: 0;
-          transition: opacity 0.5s ease;
-          transition-delay: .5s;
-          height: 100%;
-          display: flex;
-          align-items: center;
-        }
-
-        svg {
-          width: 170px;
-          height: auto;
-          display: block;
-        }
-
-        :host(.atTop) a.logo {
-          opacity: 1;
-        }
-      }
-    `;
-  }
-
   render() {
     return html`
-      <a href="#" class="logo">
+      <a
+        href="#"
+        class="logo"
+        aria-label="Erik Lorenz logo - click to go to top"
+      >
         <svg
           width="124"
           height="35"
@@ -203,19 +59,167 @@ class StickyNav extends LitElement {
         <li class="link link--tech">
           <a class="tech" href="#tech">tech</a>
         </li>
-        <span>|</span>
+        <li class="divider">|</li>
         <li class="link link--projects">
           <a class="projects" href="#projects">projects</a>
         </li>
-        <!-- <span>|</span> -->
+        <!-- <li class="divider">|</li> -->
         <!-- <li class="link">
           <a href="#about">about</a>
         </li> -->
-        <span>|</span>
+        <li class="divider">|</li>
         <li class="link link--contact">
           <a class="contact" href="#contact">contact</a>
         </li>
       </ul>
+    `;
+  }
+
+  static get styles() {
+    return css`
+      :host {
+        position: relative;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        position: sticky;
+        width: 100%;
+        height: 60px;
+        background-color: var(--primary-theme-color);
+        color: var(--secondary-theme-color);
+        top: 0;
+        align-items: center;
+        z-index: 10;
+      }
+
+      .link {
+        position: relative;
+        height: 100%;
+        display: flex;
+        align-items: center;
+      }
+
+      .link--tech::after,
+      .link--projects::after,
+      .link--contact::after {
+        content: '';
+        display: block;
+      }
+
+      :host(.spying--tech.atTop) .link--tech::after {
+        content: '';
+        display: block;
+        height: 6px;
+        width: 100%;
+        background-color: var(--secondary-theme-color);
+        position: absolute;
+        bottom: 0;
+      }
+
+      :host(.spying--projects.atTop) .link--projects::after {
+        content: '';
+        display: block;
+        height: 6px;
+        width: 100%;
+        background-color: var(--secondary-theme-color);
+        position: absolute;
+        bottom: 0;
+      }
+
+      :host(.spying--contact.atTop) .link--contact::after {
+        content: '';
+        display: block;
+        height: 6px;
+        width: 100%;
+        background-color: var(--secondary-theme-color);
+        position: absolute;
+        bottom: 0;
+      }
+
+      ul {
+        box-sizing: inherit;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        list-style: none;
+        margin: 0;
+        padding: 0%;
+        transform: translateY(-15px) scale(1.2);
+        transition: transform 0.5s ease;
+        height: 100%;
+        font-size: 16px;
+      }
+
+      .divider {
+        color: var(--secondary-theme-color);
+        margin: 0 0.5rem;
+        transition: opacity 0.5s ease, transform 0.5s ease;
+      }
+
+      a {
+        color: var(--secondary-theme-color);
+        text-decoration: none;
+        position: relative;
+        display: flex;
+        height: 100%;
+        align-items: center;
+      }
+
+      a:hover {
+        color: white;
+      }
+
+      :host(.atTop) ul {
+        transform: scale(1) translateY(0);
+      }
+
+      :host(.atTop) .divider {
+        opacity: 0;
+        transform: translateY(-15px);
+      }
+
+      path,
+      rect {
+        fill: currentColor;
+      }
+
+      svg {
+        display: none;
+      }
+
+      @media (min-width: 450px) {
+        :host {
+          height: 80px;
+        }
+
+        ul {
+          font-size: 30px;
+          height: 100%;
+        }
+
+        a.logo {
+          display: block;
+          position: absolute;
+          left: 40px;
+          opacity: 0;
+          transition: opacity 0.5s ease;
+          transition-delay: 0.5s;
+          height: 100%;
+          display: flex;
+          align-items: center;
+        }
+
+        svg {
+          width: 170px;
+          height: auto;
+          display: block;
+        }
+
+        :host(.atTop) a.logo {
+          opacity: 1;
+        }
+      }
     `;
   }
 }

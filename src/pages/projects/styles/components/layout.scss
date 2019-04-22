@@ -14,7 +14,7 @@
     'nav picture overview'
     'nav challenges challenges';
     grid-template-columns: 350px 2fr 1fr;
-    grid-template-rows: 50% 1fr;
+    grid-template-rows: 50vh 1fr;
     transform: translateX(-250px);
     transition: transform .3s ease;
 

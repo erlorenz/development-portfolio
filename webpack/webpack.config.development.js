@@ -21,6 +21,7 @@ module.exports = merge(common, {
       },
     ],
   },
+  // No code splitting for multi page app in dev
   devtool: 'inline-source-map',
   devServer: {
     contentBase: './dist',

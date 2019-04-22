@@ -147,10 +147,11 @@
         }
     }
 
-    span.dot {
+    .dot {
         color: white;
         opacity: .7;
         font-size: 2rem;
+        margin-bottom: 4px;
 
         @media (max-width: 450px) {
             display: none;

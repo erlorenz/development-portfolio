@@ -57,17 +57,19 @@ module.exports = {
     new HtmlWebPackPlugin({
       template: './src/pages/main/main.html',
       filename: 'index.html',
-      chunks: ['main', 'webpack-runtime', 'vendor'],
+
+      // Only needed for multi page project, otherwise let it inject all necessary
+      chunks: ['main', 'vendor'],
     }),
     new HtmlWebPackPlugin({
       template: './src/pages/projects/views/peappreact.html',
       filename: 'projects/peappreact/index.html',
-      chunks: ['projects', 'webpack-runtime', 'vendor'],
+      chunks: ['projects', 'vendor'],
     }),
     new HtmlWebPackPlugin({
       template: './src/pages/projects/views/personalportfolio.html',
       filename: 'projects/personalportfolio/index.html',
-      chunks: ['projects', 'webpack-runtime', 'vendor'],
+      chunks: ['projects', , 'vendor'],
     }),
     new CopyPlugin([{ from: 'public' }]), // Copy things like favicons, 3rd party files
     new FriendlyErrorsWebpackPlugin(),
