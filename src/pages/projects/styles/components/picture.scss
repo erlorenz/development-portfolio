@@ -94,6 +94,10 @@
         color: white;
         justify-self: left;
         width: 45%;
+        
+        @media (max-width: 450px) {
+            width: 100%;
+        }
     }
 
     .header__tech {
@@ -103,6 +107,7 @@
         flex-direction: column;
         width: 100%;
     }
+
     .header__tech-label {
         width: 90%;
         display: grid;

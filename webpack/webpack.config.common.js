@@ -63,6 +63,11 @@ module.exports = {
       filename: 'projects/peappreact/index.html',
       chunks: ['projects', 'webpack-runtime', 'vendor'],
     }),
+    new HtmlWebPackPlugin({
+      template: './src/pages/projects/views/personalportfolio.html',
+      filename: 'projects/personalportfolio/index.html',
+      chunks: ['projects', 'webpack-runtime', 'vendor'],
+    }),
     new CopyPlugin([{ from: 'public' }]), // Copy things like favicons, 3rd party files
   ],
   resolve: {
