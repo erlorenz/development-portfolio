@@ -109,6 +109,10 @@ class ThemeChanger extends LitElement {
         transition: transform 0.3s ease;
       }
 
+      :host([dark]) .circle {
+        border-color: var(--primary-theme-color);
+      }
+
       .circle:hover {
         transform: scale(1.3);
       }

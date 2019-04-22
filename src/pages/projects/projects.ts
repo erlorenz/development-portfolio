@@ -2,13 +2,13 @@ import './styles/index.scss';
 import '../../shared/components/ThemeChanger';
 
 // Components
+import './components/AnimatedMouse';
 
 // Scripts
 import lazyImages from '../../shared/scripts/lazyImages';
-import staggeredList from './scripts/staggeredList';
+import superCoolMenu from './scripts/superCoolMenu';
 
 addEventListener('DOMContentLoaded', () => {
   lazyImages();
-  staggeredList('#side-menu .side-menu__item', 'show', 80);
-  staggeredList('#tech .tech-list__item', 'show', 80);
+  superCoolMenu();
 });

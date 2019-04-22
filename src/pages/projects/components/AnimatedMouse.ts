@@ -1,7 +1,7 @@
 import { LitElement, customElement, html, property, css } from 'lit-element';
 
-@customElement('animated-menu-icon')
-class AnimatedMenuIcon extends LitElement {
+@customElement('animated-mouse')
+class AnimatedMouse extends LitElement {
   @property()
   show = false;
 
@@ -38,13 +38,14 @@ class AnimatedMenuIcon extends LitElement {
         display: flex;
         align-items: center;
         justify-content: center;
-        position: absolute;
+        position: fixed;
         top: 20px;
-        right: 0px;
-        width: 80px;
+        left: 0px;
+        width: 100px;
         height: 50px;
         transition: transform 0.8s ease;
         z-index: 5000;
+        cursor: pointer;
       }
 
       .container {
@@ -63,8 +64,8 @@ class AnimatedMenuIcon extends LitElement {
 
       .body {
         height: 100%;
-        width: 40%;
-        border: 4px solid lightgray;
+        width: 30%;
+        border: 4px solid white;
         border-radius: 20px;
         animation-name: pulse;
         animation-duration: 10s;
@@ -79,37 +80,25 @@ class AnimatedMenuIcon extends LitElement {
         height: 18px;
         width: 4px;
         border-radius: 4px;
-        background-color: lightgray;
+        background-color: white;
       }
 
-      :host(.spin) {
-        transform: rotate(-360deg);
+      :host(.activate) {
+        animation-name: activate;
+        animation-duration: 0.2s;
+        animation-fill-mode: backwards;
       }
 
-      @keyframes pulse {
-        96% {
-          transform: scale(1);
-          opacity: 1;
+      @keyframes activate {
+        from {
+          transform: rotate(0);
         }
-        97% {
-          transform: scale(0.8);
-          opacity: 1;
-        }
-        98% {
-          transform: scale(1);
-          opacity: 1;
-        }
-        99% {
-          transform: scale(0.9);
-          opacity: 1;
-        }
-        100% {
-          transform: scale(1);
-          opacity: 1;
+        to {
+          transform: rotate(360deg);
         }
       }
     `;
   }
 }
 
-export default AnimatedMenuIcon;
+export default AnimatedMouse;

@@ -2,4 +2,42 @@
     // background-color: lightgray;
     background-color: var(--secondary-theme-color);
     grid-area: tech;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    display: none;
+
+    .tech__list {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 45% 0;
+    }
+
+    .tech__title {
+        font-size: 1.5rem;
+        color: white
+    }
+
+    .tech__item {
+        width: 100%;
+        text-align: center;
+        transform: translatey(200px);
+        opacity: 0;
+        transition: opacity .3s, transform .3s;
+        transition-delay: .8s;
+        color: white;
+        font-size: 1.3rem;
+    }
+
+    .tech__item.show {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
 }
