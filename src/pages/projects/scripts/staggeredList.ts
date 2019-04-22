@@ -7,7 +7,6 @@ function staggeredList(
   const listItems = document.querySelectorAll(selector) as NodeListOf<
     HTMLElement
   >;
-  console.log('List items', listItems);
 
   listItems.forEach((item, index) => {
     if (reverse) {

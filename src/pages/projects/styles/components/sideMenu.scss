@@ -1,11 +1,10 @@
 #side-menu {
     background-color: var(--secondary-theme-color);
     height: 100%;
-    grid-area: nav;
     position: relative;
     
     svg {
-        width: 150px;
+        width: 150px;   
         height: auto;
 
         path, rect {

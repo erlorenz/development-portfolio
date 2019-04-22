@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -17,7 +18,7 @@ module.exports = {
             options: {
               // Inline files smaller than 10kb
               limit: 10 * 1024,
-              name: '/assets/img/[name].[ext]',
+              name: 'assets/img/[name].[ext]',
             },
           },
         ],
@@ -31,7 +32,7 @@ module.exports = {
               // Inline files smaller than 10 kB
               limit: 10 * 1024,
               noquotes: true,
-              name: '/assets/img/[name].[ext]',
+              name: 'assets/img/[name].[ext]',
             },
           },
         ],
@@ -69,9 +70,11 @@ module.exports = {
       chunks: ['projects', 'webpack-runtime', 'vendor'],
     }),
     new CopyPlugin([{ from: 'public' }]), // Copy things like favicons, 3rd party files
+    new FriendlyErrorsWebpackPlugin(),
   ],
+
+  // Add `.ts` and `.tsx` as a resolvable extension.
   resolve: {
-    // Add `.ts` and `.tsx` as a resolvable extension.
     extensions: ['.ts', '.tsx', '.js'],
   },
 };

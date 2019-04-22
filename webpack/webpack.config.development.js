@@ -10,6 +10,7 @@ module.exports = merge(common, {
     filename: '[name].js', // dont use hash in dev mode
     chunkFilename: '[name].chunk.js',
     path: path.resolve(__dirname, 'dist'),
+    publicPath: '/',
   },
   module: {
     rules: [
