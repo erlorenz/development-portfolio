@@ -16,6 +16,7 @@ import scrollSpy from './scripts/scrollSpy';
 
 //  Polyfills
 import smoothscroll from 'smoothscroll-polyfill';
+import paintDrop from './scripts/paintDrop';
 
 // Run scripts non-blocking
 addEventListener('DOMContentLoaded', () => {
@@ -27,4 +28,5 @@ addEventListener('DOMContentLoaded', () => {
   carousel();
   techImageHover();
   scrollSpy();
+  paintDrop();
 });

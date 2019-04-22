@@ -129,12 +129,8 @@ class ThemeChanger extends LitElement {
         background-color: #eb2188;
       }
 
-      @media (max-width: 450px) {
-        :host {
-          display: none;
-          bottom: 20px;
-          left: 20px;
-        }
+      :host([vertical]) {
+        flex-direction: column;
       }
     `;
   }

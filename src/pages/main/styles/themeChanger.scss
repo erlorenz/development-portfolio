@@ -5,4 +5,50 @@
     top: 20px;
     right: 40px;
     z-index: 200;
+
+    @media (max-width: 450px) {
+        top: 60px;
+        right: 0px;
+        height: 50px;
+        width: 130px;
+        padding: 5px;
+        background-color: var(--primary-theme-color);
+        border-bottom-left-radius: 15px;
+        transform: translateX(100%);
+        transition: transform .2s ease;
+
+        &.show {
+            transform: translateX(0);
+        }
+;    }
+}
+
+#paint-drop {
+    display: none;
+
+    @media (max-width: 450px) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        right: 0;
+        top: 0;
+        height: 60px;
+        width: 60px;
+        padding: 18px;
+        z-index: 10000;
+        opacity: .6;
+
+        svg {
+            height: 100%;
+            width: auto;
+                fill: var(--secondary-theme-color);
+        }
+
+        &:active {
+            opacity: 1; 
+            background-color: #312e2e;
+            border-radius: 50%;
+        }
+    }
 }

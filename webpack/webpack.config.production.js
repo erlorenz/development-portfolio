@@ -44,7 +44,7 @@ module.exports = merge(common, {
         commons: {
           test: /[\\/]node_modules[\\/]/,
           name: 'vendor',
-          chunks: 'initial',
+          chunks: 'all',
           minChunks: 2,
         },
       },
