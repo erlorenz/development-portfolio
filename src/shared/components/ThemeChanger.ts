@@ -49,7 +49,7 @@ class ThemeChanger extends LitElement {
     // Make theme changer show up after typing completed
     setTimeout(() => {
       if (!this.classList.contains('show')) this.classList.add('show');
-    }, 2000);
+    }, 1000);
   }
 
   changeTheme(color: string) {

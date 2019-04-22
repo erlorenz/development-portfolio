@@ -21,6 +21,7 @@
     }
 
     img {
+        position: absolute;
         height: auto;
         width: auto;
         max-height: 80%;
@@ -28,5 +29,113 @@
         z-index: 0;
         transition: transform 3s ease;
         transform: rotate(25deg) scale(2);
+    }
+
+    header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 2;
+        display: grid;
+        grid-template-rows: 1fr 100px;
+        justify-items: center;
+        align-items: center;
+    }
+    .header__main {
+        width: 100%;
+        padding-left: 10%;
+    }
+
+    .header__links {
+        height: 40px;
+        width: 100px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header__link {
+        height: 100%;
+        width: auto;
+        display: flex;
+        align-items: center;
+        transition: transform .2s ease;
+        opacity: .7;
+
+        &:hover {
+            transform: scale(1.2);
+            opacity: 1;
+        }
+    }
+
+    svg {
+        width: auto;
+        height: 100%;
+        color: white;
+    }
+
+    #github {
+        height: 70%;
+    }
+
+    path {
+        height: 20px;
+        width: auto;
+    }
+    
+    h1 {
+        z-index: 2;
+        color: white;
+        justify-self: left;
+        width: 45%;
+    }
+
+    .header__tech {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+    }
+    .header__tech-label {
+        width: 90%;
+        display: grid;
+        grid-template-columns: 1fr max-content 1fr;
+        color: white;
+        opacity: .4;
+        align-items: center;
+        grid-column-gap: 10px;
+
+        span {
+            display: inline-block;
+            height: 1px;
+            background-color: currentColor;
+            width: 100%;
+            z-index: 10000000;
+        }
+    }
+
+
+
+    .header__tech-list {
+        display: flex;
+        width: 100%;
+        padding: 0 5%;
+        margin: 0;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header__tech-list {
+        color: white;
+        font-size: 1rem;
+    }
+
+    span.dot {
+        color: white;
+        opacity: .7;
+        font-size: 2rem;
     }
 }
