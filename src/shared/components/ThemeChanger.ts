@@ -85,7 +85,7 @@ class ThemeChanger extends LitElement {
         height: 100%;
         width: 100%;
         background-color: transparent;
-        z-index: 5000;
+        z-index: 10000;
         opacity: 0;
         transition: opacity 0.5s ease;
       }

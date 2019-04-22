@@ -29,13 +29,16 @@
                     <li class="side-menu__item">
                         <a href="#" class="side-menu__link">Personal Portfolio</a>
                     </li>
+                    <li class="side-menu__item">
+                        <a href="/" class="side-menu__link">Home</a>
+                    </li>
                 </ul>
                 <div class="theme-changer-container">
                     <theme-changer dark></theme-changer>
                 </div>
             </nav>
             <section id="picture">
-                <img data-src="./images/mobile-landing.jpg" class="lazy-image">
+                <img data-src="../images/mobile-landing.jpg" class="lazy-image">
                 <div class="overlay"></div>
                 <header>
                     <div class="header__main">
@@ -93,41 +96,45 @@
                     off, add any
                     special instructions, and complete their payment.</p>
             </section>
-            <section id="links">
-                <div class="icons">
-                    <a class="icon" href="https://staging.pressexpresslv.com" target="_blank">
-                        <svg version="1.1" id="eye" xmlns="http://www.w3.org/2000/svg"
-                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="512px" height="512px"
-                            viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
-                            <path d="M256,96C144.341,96,47.559,161.021,0,256c47.559,94.979,144.341,160,256,160c111.656,0,208.439-65.021,256-160
-                           C464.441,161.021,367.656,96,256,96z M382.225,180.852c30.082,19.187,55.572,44.887,74.719,75.148
-                           c-19.146,30.261-44.639,55.961-74.719,75.148C344.428,355.257,300.779,368,256,368c-44.78,0-88.428-12.743-126.225-36.852
-                           c-30.08-19.188-55.57-44.888-74.717-75.148c19.146-30.262,44.637-55.962,74.717-75.148c1.959-1.25,3.938-2.461,5.929-3.65
-                           C130.725,190.866,128,205.613,128,221c0,70.691,57.308,128,128,128c70.691,0,128-57.309,128-128
-                           c0-15.387-2.725-30.134-7.703-43.799C378.285,178.39,380.266,179.602,382.225,180.852z M256,205c0,26.51-21.49,48-48,48
-                           s-48-21.49-48-48s21.49-48,48-48S256,178.49,256,205z" />
-                        </svg>
-                    </a>
-                    <a class="icon" href="https://github.com/erlorenz/pepublic" target="_blank">
-                        <svg version="1.2" baseProfile="tiny" id="github" xmlns="http://www.w3.org/2000/svg"
-                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 2350 2314.8"
-                            xml:space="preserve">
-                            <path d="M1175,0C525.8,0,0,525.8,0,1175c0,552.2,378.9,1010.5,890.1,1139.7c-5.9-14.7-8.8-35.3-8.8-55.8v-199.8H734.4
-	                        c-79.3,0-152.8-35.2-185.1-99.9c-38.2-70.5-44.1-179.2-141-246.8c-29.4-23.5-5.9-47,26.4-44.1c61.7,17.6,111.6,58.8,158.6,120.4
-	                        c47,61.7,67.6,76.4,155.7,76.4c41.1,0,105.7-2.9,164.5-11.8c32.3-82.3,88.1-155.7,155.7-190.9c-393.6-47-581.6-240.9-581.6-505.3
-	                        c0-114.6,49.9-223.3,132.2-317.3c-26.4-91.1-61.7-279.1,11.8-352.5c176.3,0,282,114.6,308.4,143.9c88.1-29.4,185.1-47,284.9-47
-	                        c102.8,0,196.8,17.6,284.9,47c26.4-29.4,132.2-143.9,308.4-143.9c70.5,70.5,38.2,261.4,8.8,352.5c82.3,91.1,129.3,202.7,129.3,317.3
-	                        c0,264.4-185.1,458.3-575.7,499.4c108.7,55.8,185.1,214.4,185.1,331.9V2256c0,8.8-2.9,17.6-2.9,26.4
-	                        C2021,2123.8,2350,1689.1,2350,1175C2350,525.8,1824.2,0,1175,0L1175,0z" />
-                        </svg>
-                    </a>
-                </div>
-            </section>
-            <section id="challenges"></section>
-            <section id="tech">
-                <ul class="tech__list">
 
-                </ul>
+            <section id="challenges">
+                <div class="challenges__grid-item">
+                    <div class="challenges__title">
+                        <h3>Time/Date Manipulation</h3>
+                        <div></div>
+                    </div>
+                    <div class="challenges__body">
+                        <p>PROBLEM: The scheduling section requires several different date/time formats for displaying,
+                            manipulating, receiving input, transmitting to the server, and storing in the
+                            database. <br> All times must be presented in PST regardless of device clock.
+                        </p>
+                        <p>
+                            SOLUTION: Tried several different libraries including Moment, Dayjs, Luxon, and
+                            Date-fns.
+                            <br> Chose Luxon as it was smaller than Moment but also has time zone features. If only user
+                            time zone mattered Dayjs would have been the best solution due to size.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="challenges__grid-item">
+                    <div class="challenges__title">
+                        <h3>Optimization</h3>
+                        <div></div>
+                    </div>
+                    <div class="challenges__body">
+                        <p>PROBLEM: The landing page was unable to render in Google Search or Bing Search in order to be
+                            indexed. <br> The page was also loading slow due to render blocking javascript and large
+                            images, and scroll events were causing jank.
+                        </p>
+                        <p>
+                            SOLUTION: Added post-build step to prerender content to static HTML.
+                            <br> Used React.Lazy to load minimum necessary javascript and
+                            created useIntersectionObserver hook to lazy load images and add animation without
+                            scroll events.
+                        </p>
+                    </div>
+                </div>
             </section>
         </div>
     </div>

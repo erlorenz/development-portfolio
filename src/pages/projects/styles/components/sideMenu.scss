@@ -22,6 +22,11 @@
         align-items: center;
         width: 120px;
         height: 40px;
+        z-index: 10000;
+
+        @media(max-width: 450px) {
+            position: fixed;
+        }
     }
 
     .side-menu__list {
@@ -64,6 +69,22 @@
 
         &:hover {
             transform: translateX(-10px);
+        }
+    }
+
+    @media (max-width: 450px) {
+        position: fixed;
+        transform: translateX(-300px);
+        width: 300px;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        bottom:0;
+        transition: transform .3s ease;
+        z-index: 10;
+
+        &.open {
+            transform: translateX(0);
         }
     }
 }

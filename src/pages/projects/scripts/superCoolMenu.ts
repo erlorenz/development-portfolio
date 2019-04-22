@@ -3,6 +3,7 @@ import staggeredList from './staggeredList';
 function superCoolMenu() {
   const mouse = document.querySelector('animated-mouse') as HTMLElement;
   const canvas = document.querySelector('.sliding-canvas') as HTMLDivElement;
+  const sideMenu = document.querySelector('#side-menu') as HTMLElement;
   const listItems = document.querySelectorAll('.side-menu__item') as NodeListOf<
     HTMLElement
   >;
@@ -17,9 +18,11 @@ function superCoolMenu() {
       // Open the canvas do the list with delay
       canvas.classList.add('open');
       staggeredList('.side-menu__item', 'show', 120);
+      sideMenu.classList.add('open');
     } else {
       // Hide the list and close canvas
       canvas.classList.remove('open');
+      sideMenu.classList.remove('open');
       listItems.forEach(item => {
         item.classList.remove('show');
       });

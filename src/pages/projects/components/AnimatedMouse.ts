@@ -22,8 +22,8 @@ class AnimatedMouse extends LitElement {
       >
         <div class="body">
           <div class="outline"></div>
+          <div class="line"></div>
         </div>
-        <div class="line"></div>
       </div>
     `;
   }
@@ -39,10 +39,10 @@ class AnimatedMouse extends LitElement {
         align-items: center;
         justify-content: center;
         position: fixed;
-        top: 20px;
+        top: 0px;
         left: 0px;
         width: 100px;
-        height: 50px;
+        height: 90px;
         transition: transform 0.8s ease;
         z-index: 5000;
         cursor: pointer;
@@ -53,7 +53,7 @@ class AnimatedMouse extends LitElement {
         align-items: center;
         justify-content: center;
         width: 100%;
-        height: 100%;
+        height: 50px;
         transition: opacity 2s ease;
         opacity: 0;
       }
@@ -67,16 +67,14 @@ class AnimatedMouse extends LitElement {
         width: 30%;
         border: 4px solid white;
         border-radius: 20px;
-        animation-name: pulse;
-        animation-duration: 10s;
-        animation-iteration-count: infinite;
+        position: relative;
       }
 
       .line {
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
-        top: 8px;
+        top: 2px;
         height: 18px;
         width: 4px;
         border-radius: 4px;
@@ -95,6 +93,31 @@ class AnimatedMouse extends LitElement {
         }
         to {
           transform: rotate(360deg);
+        }
+      }
+
+      @media (max-width: 450px) {
+        :host {
+          height: 70px;
+          width: 70px;
+        }
+
+        .body {
+          background-color: var(--secondary-theme-color);
+          width: 45%;
+        }
+
+        :host(.activate) {
+          animation-name: pulse;
+        }
+
+        @keyframes pulse {
+          50% {
+            transform: scale(1.3);
+          }
+          100% {
+            transform: scale(1);
+          }
         }
       }
     `;
