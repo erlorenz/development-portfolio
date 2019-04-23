@@ -1,10 +1,6 @@
 // Styles
 import './styles/index.scss';
 
-// Web Components (polyfill loaded render blocking)
-import './components/StickyNav';
-import '../../shared/components/ThemeChanger';
-
 // Scripts
 import isAtTop from './scripts/isAtTop';
 import typewriter from './scripts/typewriter';
@@ -13,14 +9,20 @@ import fadeImages from './scripts/fadeImages';
 import carousel from './scripts/carousel';
 import techImageHover from './scripts/techImageHover';
 import scrollSpy from './scripts/scrollSpy';
+import useAModernBrowser from '../../shared/scripts/useAModernBrowser';
 
 //  Polyfills
 import smoothscroll from 'smoothscroll-polyfill';
 import paintDrop from './scripts/paintDrop';
 
 // Run scripts non-blocking
-addEventListener('DOMContentLoaded', () => {
+addEventListener('DOMContentLoaded', async () => {
+  // Get mad if web components dont work
+  useAModernBrowser();
+
+  // Smooth scroll polyfill for safari
   smoothscroll.polyfill();
+
   typewriter();
   isAtTop();
   lazyImages();
@@ -29,4 +31,10 @@ addEventListener('DOMContentLoaded', () => {
   techImageHover();
   scrollSpy();
   paintDrop();
+
+  // Load webcomponents
+  await Promise.all([
+    import('./components/StickyNav'),
+    import('../../shared/components/ThemeChanger'),
+  ]);
 });

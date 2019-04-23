@@ -1,14 +1,20 @@
 import './styles/index.scss';
-import '../../shared/components/ThemeChanger';
-
-// Components
-import './components/AnimatedMouse';
 
 // Scripts
 import lazyImages from '../../shared/scripts/lazyImages';
 import superCoolMenu from './scripts/superCoolMenu';
+import useAModernBrowser from '../../shared/scripts/useAModernBrowser';
 
-addEventListener('DOMContentLoaded', () => {
+addEventListener('DOMContentLoaded', async () => {
+  // Get mad if web components dont work
+  useAModernBrowser();
+
   lazyImages();
   superCoolMenu();
+
+  // Load web components
+  await Promise.all([
+    import('./components/AnimatedMouse'),
+    import('../../shared/components/ThemeChanger'),
+  ]);
 });
