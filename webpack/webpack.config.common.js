@@ -65,6 +65,9 @@ module.exports = {
     ...generateHTMLPlugins(),
     new CopyPlugin([{ from: 'public' }]), // Copy things like favicons, 3rd party files
     new FriendlyErrorsWebpackPlugin(),
+    // new webpack.DefinePlugin({
+    //   EXAMPLE: JSON.stringify(true),
+    // }),
   ],
 
   // Add `.ts` and `.tsx` as a resolvable extension.

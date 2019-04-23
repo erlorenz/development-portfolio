@@ -110,7 +110,7 @@ class ThemeChanger extends LitElement {
       }
 
       :host([dark]) .circle {
-        border-color: var(--primary-theme-color);
+        border-color: white;
       }
 
       .circle:hover {
