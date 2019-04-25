@@ -139,6 +139,10 @@
         justify-content: center;
         grid-column-gap: .5rem;
 
+        @media (max-width: 1000px) {
+            font-size: .9rem;
+        }
+
         @media (max-width: 450px) {
             font-size: .9rem;
             grid-template-columns: repeat(3, minmax(max-content, 1fr));

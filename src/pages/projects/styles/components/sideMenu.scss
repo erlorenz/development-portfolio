@@ -23,7 +23,7 @@
         height: 40px;
         z-index: 10000;
 
-        @media(max-width: 450px) {
+        @media(max-width: 1200px) {
             position: fixed;
         }
     }
@@ -75,7 +75,7 @@
         }
     }
 
-    @media (max-width: 450px) {
+    @media (max-width: 1200px) {
         position: fixed;
         transform: translateX(-300px);
         width: 300px;

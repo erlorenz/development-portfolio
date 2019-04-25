@@ -10,9 +10,14 @@ function scrollSpy() {
   function spy(section: HTMLElement) {
     const sectionName = section.dataset.section || '';
 
+    // Threshold for projects section needs to be different
     const config = {
-      threshold: 0.45,
+      threshold: 0.7,
     };
+
+    if (section.classList.contains('projects') && window.screen.width < 500) {
+      config.threshold = 0.5;
+    }
 
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {

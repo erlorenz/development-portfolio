@@ -6,7 +6,7 @@
     right: 40px;
     z-index: 200;
 
-    @media (max-width: 450px) {
+    @media (max-width: 1200px) {
         top: 60px;
         right: 0px;
         height: 50px;
@@ -26,7 +26,7 @@
 #paint-drop {
     display: none;
 
-    @media (max-width: 450px) {
+    @media (max-width: 1200px) {
         display: flex;
         justify-content: center;
         align-items: center;

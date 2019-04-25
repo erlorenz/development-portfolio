@@ -120,7 +120,7 @@ class AnimatedMouse extends LitElement {
       }
 
       /***** Small screens *****/
-      @media (max-width: 450px) {
+      @media (max-width: 1200px) {
         :host {
           height: 50px;
           width: 50px;

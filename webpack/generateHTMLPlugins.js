@@ -1,4 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
+/**
+ * Use this for apps with multiple HTML Files
+ */
 const glob = require('glob');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const path = require('path');

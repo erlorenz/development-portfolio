@@ -5,7 +5,7 @@
     flex-direction: column;
     align-items: center;
 
-    @media (min-width: 450px) {
+    @media (min-width:  500px) {
         height: auto;
         padding: 5rem 0;
     }
@@ -23,7 +23,7 @@
         scroll-snap-points-x: repeat(100%);
 
         // Remove scrollbar
-        @media (min-width: 450px) {
+        @media (min-width:  1200px) {
             scrollbar-width: none;
             -ms-overflow-style: none;
               
@@ -41,7 +41,7 @@
         align-items: center;
         padding: 2rem 10% 2rem 10%;
 
-        @media (min-width: 450px) {
+        @media (min-width:  1200px) {
             padding: 0 8rem 2rem 8rem;
         }
     }
@@ -74,7 +74,7 @@
         flex-wrap: wrap;
         justify-content: space-around;
 
-        @media (min-width: 450px) {
+        @media (min-width:  1200px) {
             flex-direction: row;
         }
     }
@@ -87,7 +87,7 @@
     padding: 20px;
     cursor: pointer;
 
-    @media (min-width: 450px) {
+    @media (min-width:  1200px) {
         width: auto;
         max-height: 200px;
         max-width: 200px;
@@ -121,7 +121,7 @@
         align-items: center;
         justify-content: center;
 
-        @media (min-width: 450px) {
+        @media (min-width:  1200px) {
             height: 60px;
             width:60px;
             border: 2px solid lightgray;
@@ -151,7 +151,7 @@
     }
 
     .indicator .arrow--right {
-        @media (min-width: 450px) {
+        @media (min-width:  1200px) {
             position: absolute;
             right: 20px;
             top: 50%;
@@ -160,7 +160,7 @@
     }
 
     .indicator .arrow--left {
-        @media (min-width: 450px) {
+        @media (min-width:  1200px) {
             position: absolute;
             left: 20px;
             top: 50%;

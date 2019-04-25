@@ -19,22 +19,28 @@
     transition: transform .3s ease;
 
 
-    @media (max-width: 450px) {
+    @media (max-width: 1200px) {
         width: 100%;
         grid-template-columns: 1fr;
-        grid-template-rows: 100vh 100vh 1fr;
         grid-template-areas:
         'picture'
         'overview'
         'challenges';
         transform: none;
+        grid-template-rows: 100vh auto auto;
     }
+    
+    @media (max-width: 500px) {
+        grid-template-rows: 100vh 100vh 1fr;
+
+    }
+
 }
 
 .sliding-canvas.open {
     transform: translateX(0);
 
-    @media (max-width: 450px) {
+    @media (max-width: 1200px) {
         transform: none;
     }
 }

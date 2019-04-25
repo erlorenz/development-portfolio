@@ -164,6 +164,16 @@ class StickyNav extends LitElement {
         display: flex;
         height: 100%;
         align-items: center;
+        transition: color 0.5s ease, opacity 0.3s ease;
+      }
+
+      :host(.atTop) a {
+        color: white;
+        opacity: 0.8;
+      }
+
+      :host(.atTop) a:hover {
+        opacity: 1;
       }
 
       a:hover {
@@ -188,7 +198,7 @@ class StickyNav extends LitElement {
         display: none;
       }
 
-      @media (min-width: 450px) {
+      @media (min-width: 1200px) {
         :host {
           height: 80px;
         }
@@ -211,9 +221,10 @@ class StickyNav extends LitElement {
         }
 
         svg {
-          width: 170px;
+          width: 130px;
           height: auto;
           display: block;
+          color: var(--secondary-theme-color);
         }
 
         :host(.atTop) a.logo {
