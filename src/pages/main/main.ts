@@ -10,10 +10,12 @@ import carousel from './scripts/carousel';
 import techImageHover from './scripts/techImageHover';
 import scrollSpy from './scripts/scrollSpy';
 import useAModernBrowser from '../../shared/scripts/useAModernBrowser';
+import prefetchLinks from '../../shared/scripts/prefetchLinks';
+import paintDrop from './scripts/paintDrop';
 
 //  Polyfills
 import smoothscroll from 'smoothscroll-polyfill';
-import paintDrop from './scripts/paintDrop';
+import 'intersection-observer';
 
 // Run scripts non-blocking
 addEventListener('DOMContentLoaded', async () => {
@@ -31,6 +33,7 @@ addEventListener('DOMContentLoaded', async () => {
   techImageHover();
   scrollSpy();
   paintDrop();
+  prefetchLinks();
 
   // Load webcomponents
   await Promise.all([
