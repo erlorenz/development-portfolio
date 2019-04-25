@@ -12,12 +12,12 @@ function prefetchLinks() {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         const target = entry.target as HTMLAnchorElement;
-        const href = target.href as string;
+        const href = target.getAttribute('href') as string;
 
         // Create prefetch in head
         const link = document.createElement('link');
         link.setAttribute('rel', 'prefetch');
-        link.setAttribute('href', href + '/index.html');
+        link.setAttribute('href', href);
         document.head.appendChild(link);
 
         // End the observer
